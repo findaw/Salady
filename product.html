@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="product.css" />
+    <title>제품 목록</title>
+    <style>
+
+    
+    </style>
+</head>
+<body>
+    <div id="headerLine">
+        <div id="headerWrap">
+            <div id="headLine" class="line">
+                <div id="headWrap" class="wrap">
+                    <div id="logoWrap">
+                        <a href="#main"><img id="logo" src="img/Salady_logo.png" /></a>
+                    </div>
+                    <div id="serachBarWrap" >
+                        <input id="searchBar" type="text" placeholder="검색할 내용" />
+                        <img src="img/search.png" />
+                    </div>
+                    <div id="userBtnsWrap">
+                        <ul>
+                            <li><a href="#login"><img class="userBtnImg" src="img/login.png" />로그인</a></li>
+                            <li><a href="#user"><img class="userBtnImg" src="img/user.png" />회원가입</a></li>
+                            <li><a href="#setting"><img class="userBtnImg" src="img/setting.png" />설정</a></li>
+                        </ul> 
+                    </div>
+                </div>
+            </div>  <!-- headLine -->
+            
+            <div id="cateLine" class="line">
+                    
+                <ul id="cateBtnsWrap" class="wrap">
+                    <li><a href="#product">건강식품</a></li>
+                    <li><a href="#bestitem">나만의추천제품</a></li>
+                    <li><a href="#review">후기모음</a></li>
+                    <li><a href="#q&a">고객상담</a></li>
+            
+                </ul> 
+                
+            </div>  <!-- cateLine -->
+        </div>
+    </div>      <!-- Header Line-->
+    <div id="bodyLine">
+        <div id="leftSide">
+            왼쪽 사이드
+        </div>  <!-- left Side-->
+        
+        <div id="mainWrap">
+
+            <div id="itemOptionContainer">
+                <div id="itemOptionWrap">
+                    <div id="searchBtn">적용</div>
+                    <div id="itemOptionLineWrap">
+                        <div class="optionLine">
+                            <div class="optionLineTitle">제품종류</div>
+                            <ul class="optionListWrap">
+                                <li>칼슘</li><li class="optionCheck">클로렐라</li><li>밀크씨슬</li>
+                                <li class="optionCheck">멀티비타민</li><li class="optionCheck">비타민</li><li>다이어트식품</li><li>유산균</li>
+                                <li>홍삼</li><li>루테인</li><li>프로바이오틱스</li>
+                            </ul>        
+                        </div>
+                        <div class="optionLine">
+                            <div class="optionLineTitle">태그</div>
+                            <ul class="optionListWrap">
+                                <li class="optionCheck">적립</li><li>할인</li><li>TOP5</li><li>추천</li><li>인기</li><li>추가증정</li><li>쿠폰</li>
+                            </ul>
+                        </div>
+                    </div>  <!--  itemOptionLineWrap  -->
+                    <div id="sortOptionLine">
+                        <ul id="sortOptionListWrap">
+                            <li id="sortOptionCheck">신상품순</li><li>높은가격순</li><li>낮은가격순</li><li>인기상품순</li>
+                        </ul>
+                    </div>
+                </div>  <!--  itemOptionWrap  -->
+            </div>   <!-- itemOptionContainer  -->
+
+            <div id="itemList">
+                <div class="listItem">
+                    <a href="#item">
+                        <div class="itemWrap">
+                            <img class="itemImg" src="https://via.placeholder.com/400" />
+                            <div class="itemCateLine"><span class="typeCalcium">칼슘</span><span class="typeVitamin">비타민</span></div>
+                            <div class="itemTitle"><span class="itemBrand">[브랜드 이름]</span>기본상품 이름길면넘어가</div>
+                            <div class="itemPriceLine itemPrice">22,800</div>
+                            <div class="itemText">기본상품에 대한 설명 : 태그가없음일단</div>
+                            <div class="itemTagLine">
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                
+                <div class="listItem">
+                    <a href="#item">
+                        <div class="itemWrap">
+                            <img class="itemImg" src="https://via.placeholder.com/400" />
+                            <div class="itemCateLine"><span class="typeCalcium">칼슘</span></div>
+                            <div class="itemTitle"><span class="itemBrand">[브랜드 이름]</span>세일 제품이름</div>
+                            <div class="itemPriceLine"><span class="itemOrgPrice">60,000</span><span  class="itemPriceArrow">→</span><span class="itemSalePrice itemPrice">45,000</span></div>
+                            <div class="itemText">세일 에 대한 설명:가격할인표시</div>
+                            <div class="itemTagLine">
+                                <span class="itemTag">할인</span>
+                                <span class="itemTag">추천</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>                
+                <div class="listItem">
+                    <a href="#item">
+                        <div class="itemWrap">
+                            <img class="itemImg" src="https://via.placeholder.com/400" />
+                            <div class="itemCateLine"><span class="typeCalcium">칼슘</span><span class="typeChlorella">클로렐라</span><span class="typeMilkThistle">밀크씨슬</span><span class="typeDietFood">다이어트식품</span></div>
+                            <div class="itemTitle"><span class="itemBrand">[브랜드 이름]</span>이벤트 제품이름</div>
+                            <div class="itemPriceLine itemPrice">33,700</div>
+                            <div class="itemText">이벤트 제품에 대한 설명</div>
+                            <div class="itemTagLine">
+                                <span class="itemTag">BEST</span>
+                                <span class="itemTag">추천</span>
+                                <span class="itemTag">이벤트</span>
+                                <span class="itemTag">추가증정</span>
+                                <span class="itemTag">1+1</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>                              
+                <div class="listItem">
+                        <a href="#item">
+                        <div class="itemWrap">
+                            <img class="itemImg" src="https://via.placeholder.com/400" />
+                            <div class="itemCateLine"><span class="typeLacto">유산균</span></div>
+                            <div class="itemTitle"><span class="itemBrand">[브랜드 이름]</span>맞춤 제품이름</div>
+                            <div class="itemPriceLine itemPrice">46,500</div>
+                            <div class="itemText">맞춤 제품에 대한 설명</div>
+                            <div class="itemTagLine">
+                                <span class="itemTag">맞춤</span>
+                                <span class="itemTag">인기</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="listItem">
+                    <a href="#item">
+                        <div class="itemWrap">
+                            <img class="itemImg" src="https://via.placeholder.com/400" />
+                            <div class="itemCateLine"><span class="typeChlorella">클로렐라</span><span class="typeRedGinseng">홍삼</span></div>
+                            <div class="itemTitle"><span class="itemBrand">[브랜드 이름]</span>광고 제품이름</div>
+                            <div class="itemPriceLine itemPrice">27,000</div>
+                            <div class="itemText">광고 제품에 대한 설명</div>
+                            <div class="itemTagLine">
+                                <span class="itemTag">광고</span>
+                                <span class="itemTag">BEST</span>
+                                <span class="itemTag">적립금</span>
+                                <span class="itemTag">TOP5</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>                
+                <div class="listItem">
+                    <a href="#item">
+                        <div class="itemWrap">
+                            <img class="itemImg" src="https://via.placeholder.com/400" />
+                            <div class="itemCateLine"><span class="typeLutein">루테인</span></div>
+                            <div class="itemTitle"><span class="itemBrand">[브랜드 이름]</span>인기 제품이름</div>
+                            <div class="itemPriceLine itemPrice">24,900</div>
+                            <div class="itemText">인기 제품에 대한 설명</div>
+                            <div class="itemTagLine">
+                                <span class="itemTag">BEST</span>
+                                <span class="itemTag">인기</span>
+                                <span class="itemTag">쿠폰</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="listItem">
+                        <a href="#item">
+                        <div class="itemWrap">
+                            <img class="itemImg" src="https://via.placeholder.com/400" />
+                            <div class="itemCateLine"><span class="typeMilkThistle">밀크씨슬</span><span class="typeDietFood">다이어트식품</span></div>
+                            <div class="itemTitle"><span class="itemBrand">[브랜드 이름]</span>추천 제품이름</div>
+                            <div class="itemPriceLine itemPrice">35,700</div>
+                            <div class="itemText">추천제품에 대한 설명</div>
+                                    <div class="itemTagLine">
+                                        <span class="itemTag">BEST</span>
+                                        <span class="itemTag">추천</span>
+                                    </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="listItem">
+                    <a href="#item">
+                        <div class="itemWrap">
+                            <img class="itemImg" src="https://via.placeholder.com/400" />
+                            <div class="itemCateLine"><span class="typeProbiotics">프로바이오틱스</span></div>
+                            <div class="itemTitle"><span class="itemBrand">[브랜드 이름]</span>브랜드 제품이름</div>
+                            <div class="itemPriceLine itemPrice">32,800</div>
+                            <div class="itemText">브랜드 제품에 대한 설명</div>
+                            <div class="itemTagLine">
+                                <span class="itemTag">적립금</span>
+                                <span class="itemTag">TOP5</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+            </div>   <!-- itemList -->
+        
+            <div id="pageNumLine">
+                <span>
+                    <span  id="firstPageBtn" class="pageBtn"> &lt;&lt; </span>
+                    <span id="prevPageBtn" class="pageBtn"> &lt; </span>
+                </span>
+                <div id="pageNumWrap">
+                    <span class="pageNumBtn">1</span>
+                    <span class="pageNumBtn">2</span>
+                    <span class="pageNumBtn">3</span>
+                    <span class="pageNumBtn">4</span>
+                    <span class="pageNumBtn">5</span>
+                </div>
+                <span>
+                    <span id="nextPageBtn" class="pageBtn"> &gt; </span>
+                    <span id="lastPageBtn" class="pageBtn"> &gt;&gt; </span>
+                </span>
+            </div>
+         
+
+        </div>  <!-- mainWrap -->
+
+
+        <div id="rightSide">
+            오른쪽사이드
+        </div>  <!-- right Side-->
+
+    </div>     <!-- Body Line -->
+
+
+    <div id="footer">
+            하단
+    </div>
+
+</body>
+</html>
