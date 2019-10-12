@@ -192,6 +192,8 @@ ul{
 }
 
 
+/* product detail info category */
+
 #prdDetailCateContainer{
     display:flex; justify-content:center;
 }
@@ -210,6 +212,63 @@ ul{
 }
 .detailCateTable tbody td{
 }
+
+
+/* product review cateogry */ 
+
+#prdReviewContainer{
+    display: flex; justify-content: center;
+}
+#reviewLineWrap{
+    display:flex; align-items:center; flex-direction: column;
+    max-width : 1200px;
+}
+#reviewTitleLine{
+    display:flex; position:relative; width :100%;    margin : 20px 0; 
+}
+#reviewLineTitle{
+    font-size:24px;
+}
+#reviewWriteBtn{
+    position:absolute; right:0; width : 100px; margin : 10px; padding: 10px; background-color:#1d3b63; color:white;
+    cursor:pointer; text-align:center;
+}
+#reviewItemWrap{
+    margin : 40px 0;          
+}
+.reviewItem{
+    display:flex; position:relative;  flex-direction:column;  padding : 20px;
+    border: 1px solid #a5a4a4;  margin : 20px; 
+}
+.reviewWrap{
+    display:flex; position:relative;    margin : 10px;
+}
+.reviewerInfoLine{
+    position:absolute; right:10px; bottom : 10px;
+}
+.reviewImgWrap{
+    margin : 10px 20px 10px 10px; 
+}
+
+/* review page number button */
+#reviewNumLine{
+
+}
+#reviewNumBtnWrap{
+    display:flex; 
+}
+#reviewNumWrap{
+    margin : auto 0;
+}
+.reviewPageBtn{
+    cursor:pointer; margin : 8px; padding : 5px; background-color: #ececec;
+}
+.reviewPageBtnActive{
+    background-color: #e26969;
+}
+
+
+
 
 #prdPSellerInfoContainer{
     display:flex; justify-content:center;
