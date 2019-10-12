@@ -1,0 +1,216 @@
+body{margin:0px;}
+h1, h2, h3, h4, h5, h6{margin : 0px;}
+a{color:#000000;}
+a:link{text-decoration:none;}
+a:visited{text-decoration:none;}
+a:hover{text-decoration:none;}
+ul{
+    list-style:none;
+    margin : 0px;
+    padding : 0px;
+}
+
+.line{}
+.wrap{}
+
+/* Header Line */
+#headerLine{
+    border-bottom : 2px solid rgb(165, 77, 182);  
+    display:flex; justify-content:center;
+}
+#headerWrap{
+    display:flex;
+    flex-direction:column;
+    margin : 0 auto;
+    width:1200px;
+    
+}
+
+
+/* Head Line */
+#headLine{ margin-bottom : 15px;}
+
+#headWrap{
+    display:flex; align-items :center; justify-content : space-between; margin:30px 20px 10px 20px; 
+
+}
+#logoWrap{
+    width:250px; height:80px; 
+    
+}
+#logo{
+    margin:0 auto; width : 90%; 
+}
+#serachBarWrap{
+    display:flex; justify-content:center; align-items : center; width : 45%; height:50px;
+    padding :0 5px; background-color: #d5bde0; border-radius:20px;
+}
+#serachBarWrap img{ width : 22px; margin-left : 5px; }
+#searchBar{
+    background-color:inherit;
+    border: 0px; width:90%; height:80%; 
+}
+#searchBar:focus{
+    outline:none;
+}
+#userBtnsWrap{
+    margin : 10px;
+}
+#userBtnsWrap ul li a{
+    color:#7e7e7e;
+}
+.userBtnImg{
+    width : 15px; margin : 0 5px 0 0;
+}
+#userBtnsWrap ul li{
+    float:left; padding : 5px; margin-right : 10px; width : fit-content; 
+    
+}
+@media (max-width : 600px){
+    #headWrap{flex-direction:column; text-align:center;} 
+    #serachBarWrap{width: 85%; }
+}
+
+
+/* Category Line */
+#cateLine{ }
+#cateBtnsWrap{ margin-left : 10px; display:flex; flex-wrap:wrap;}
+#cateBtnsWrap li{
+    list-style:none; float:left;  margin : 10px;  padding : 10px 25px;    
+}
+#cateBtnsWrap li a:hover{
+    color:#0eb337;
+}
+@media (max-width : 600px){
+    #cateBtnsWrap{justify-content:center;}
+}
+
+
+/*  Body Line   */
+
+#bodyLine{
+    display:flex;
+}
+#mainWrap{
+    display:flex;
+    flex-direction:column;
+    margin : 0 auto;
+    width : 80%;
+}
+@media (min-width:1800px){
+    #mainWrap{width:1350px;}
+}
+
+@media (max-width:1080px){
+    #mainWrap{width:100%;}
+    #leftSide{display:none;}
+    #rightSide{display:none;}
+}
+
+
+
+/* footerLine */
+#footer{
+    background-color: #83329e;
+    height: 300px;
+}
+
+
+/* productDetail.css */
+
+
+/* Product Info Category */
+
+#prdInfoCateContainer{
+    display:flex; justify-content: center;
+}
+#prdDetailWrap{
+    display:flex; width:100%; justify-content: center;;
+}
+#prdImgWrap{
+    display:flex; justify-content:center; width : 43%; padding : 60px 40px; 
+}
+#prdImg{
+    width:100%; max-height : 550px;
+}
+#infoContainer{
+    margin : 30px 40px; width : 57%;
+}
+#prdMainInfo{
+    padding : 5px 30px;
+}
+.infoWrap{
+    border-top : 1px solid #018107; margin : 15px 10px; 
+}
+.infoText{
+    color: #018107; font-weight:bold; padding : 10px;
+}
+.prdDetailInfo{
+    margin : 10px;
+}
+.prdDetailInfo th{width :100px; }
+.prdDetailInfo th, .prdDetailInfo td{
+    padding : 15px;
+}
+.detailInfoHead{
+    margin : 0 40px 0 20px;
+}
+#purchaseInfo{
+    margin : 10px;  padding : 5px 30px;
+}
+
+@media (max-width : 800px){
+    #prdDetailWrap{flex-direction: column; align-items: center;}
+    #prdImgWrap{ width:70%; }
+    #infoContainer{ width : 100%; }
+}
+/*  product info  */
+#prdId{ color:#868686; position:absolute; right:0px; top : -20px;}
+#prdTitle{font-size : 25px;}
+#prdPrice{font-size : 19px; color:#06810d; font-weight:bold; margin : 5px;}
+#ingrInfo{ position:relative; }
+.ingr{ padding : 5px; margin : 5px; background-color:#db6403; border-radius:20px; color:white;}
+#ingrInfoBox{ max-width:500px; margin-top : 10px; position:absolute; padding : 15px 10px;  border:1px solid #db6403; background-color:white;    }
+.infoBoxHide { display:none; }
+.ingrInfoText {display:none; }
+
+
+/* Product Page Category */
+#infoCateLine{
+    background-color:#d4c5e6;
+    margin : 30px 0;
+}
+#infoCateWrap{
+    display:flex; 
+}
+#infoCateWrap li{
+    padding : 15px 30px; 
+}
+.infoCateTarget{
+    background-color:white;
+    border-left:1px solid #886faa; border-top:1px solid #886faa; border-right:1px solid #886faa;
+}
+
+
+#prdDetailCateContainer{
+    display:flex; justify-content:center;
+}
+.detailCateTable{
+    width : 80%;
+    border-collapse:collapse;
+    border:1px solid #5a5a5a;
+    
+}
+.detailCateTable tbody th, .detailCateTable tbody td{
+    border:1px solid #5a5a5a;
+    padding : 10px 15px;
+}
+.detailCateTable tbody th{
+    background-color:#d3d3d3;
+}
+.detailCateTable tbody td{
+}
+
+#prdPSellerInfoContainer{
+    display:flex; justify-content:center;
+}
