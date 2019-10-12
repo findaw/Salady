@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="productDetail.css" />
+
+    <title>제품 상세 페이지</title>
+
+    <style>
+      
+
+    </style>
+
+
+</head>
+<body>
+
+     <div id="headerLine">
+        <div id="headerWrap">
+            <div id="headLine" class="line">
+                <div id="headWrap" class="wrap">
+                    <div id="logoWrap">
+                        <a href="#main"><img id="logo" src="img/Salady_logo.png" /></a>
+                    </div>
+                    <div id="serachBarWrap" >
+                        <input id="searchBar" type="text" placeholder="검색할 내용" />
+                        <img src="img/search.png" />
+                    </div>
+                    <div id="userBtnsWrap">
+                        <ul>
+                            <li><a href="#login"><img class="userBtnImg" src="img/login.png" />로그인</a></li>
+                            <li><a href="#user"><img class="userBtnImg" src="img/user.png" />회원가입</a></li>
+                            <li><a href="#setting"><img class="userBtnImg" src="img/setting.png" />설정</a></li>
+                        </ul> 
+                    </div>
+                </div>
+            </div>  <!-- headLine -->
+            
+            <div id="cateLine" class="line">
+                    
+                <ul id="cateBtnsWrap" class="wrap">
+                    <li><a href="#product">건강식품</a></li>
+                    <li><a href="#bestitem">나만의추천제품</a></li>
+                    <li><a href="#review">후기모음</a></li>
+                    <li><a href="#q&a">고객상담</a></li>
+            
+                </ul> 
+                
+            </div>  <!-- cateLine -->
+        </div>
+    </div>      <!-- Header Line-->
+
+    <div id="bodyLine">
+
+
+        <div id="mainWrap">
+
+            
+            <!-- product info Line-->
+            <div id="infoCateLine">
+                <ul id="infoCateWrap" >
+                    <li id="prdInfoCate" class="infoCateTarget"><a href="#prdInfoCate">상품정보</a></li>
+                    <li><a href="#prdPromoCate">상품설명</a></li>
+                    <li><a href="#prdDetailCate">상세정보</a></li>
+                    <li><a href="#prdReviewCate">상품후기</a></li>
+                    <li><a href="#prdQnACate">상품문의</a></li>
+                    <li><a href="#prdSellerInfoCate">판매자정보</a></li>
+                </ul>
+            </div>
+
+            <div id="prdInfoCateContainer">
+
+                <div id="prdDetailWrap">
+                        <div id="prdImgWrap">
+                            <img id="prdImg" src="https://via.placeholder.com/500/" />
+                        </div>
+                    
+                    <div id="infoContainer">
+                        <div id="prdMainInfo">
+                            <span id="prdId">상품번호 : 1321432143</span>
+                            <div id="prdTitle">제품이름이 위치하는곳</div>
+                            <div id="prdPrice">22,600</div>
+                        </div>
+                        <div class="infoWrap">
+                            <div class="infoText">주요 정보</div>
+                                <table>
+                                    <tbody class="prdDetailInfo" >
+                                        <tr>
+                                            <th id="" class="detailInfoHead">식품유형</th><td>건강기능식품</td>
+                                        </tr>
+                                        <tr>
+                                            <th id="" class="detailInfoHead">중량/용량</th><td>102g(180캡슐)/6개월분</td>
+                                        </tr>
+                                        <tr>
+                                            <th id="ingrInfo" class="detailInfoHead">주요성분</th>
+                                            <td><span class="ingr" id="ingrLutein">루테인</span><span class="ingr" id="ingrVitaminA">비타민A</span>
+                                                <div id="ingrInfoBox" class="infoBoxHide">비타민 A(레티놀)는 눈의 망막에서 감광 신경 세포(광수용기)의 기능에 필요합니다. 또한 피부와 폐, 장 및 요로 내막을 건강하게 유지하고 감염으로부터 보호하는 데 도움을 줍니다.</div>
+                                                <label for="ingrLutein" class="ingrInfoText">루테인은 노화로 인해 감소될 수 있는 황반색소밀도를 유지하여 눈 건강에 도움을 준다.</label>
+                                                <label for="ingrVitaminA" class="ingrInfoText">비타민 A(레티놀)는 눈의 망막에서 감광 신경 세포(광수용기)의 기능에 필요합니다. 또한 피부와 폐, 장 및 요로 내막을 건강하게 유지하고 감염으로부터 보호하는 데 도움을 줍니다.</label>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th id="" class="detailInfoHead">기능</th><td>
+                                                눈 안쪽 신경조직을 황반이라고 하는데 노화나 염증 등에 의해 기능이 떨어지면 시력이 감소하게 되는데 꾸준한 루테인 섭취로 예방할 수 있다.</td>
+                                        </tr>
+                                        <tr>
+                                            <th id="" class="detailInfoHead">섭취방법</th><td>제품 섭취방법 설명</td>
+                                        </tr>
+                                        <tr>
+                                            <th id="" class="detailInfoHead">추천대상</th><td>이런분들께 좋습니다.</td>
+                                        </tr>
+                                        <tr>
+                                            <th id="" class="detailInfoHead">알레르기정보</th><td>제품에 함유된 성분 중 알레르기를 유발할 수 있는 성분</td>
+                                        </tr>
+                                        <tr>
+                                            <th id="" class="detailInfoHead">주의사항</th><td>제품에 대한 주의사항</td>
+                                        </tr>
+                                        <tr>
+                                            <th id="" class="detailInfoHead">안내사항</th><td>제품에 대한 안내사항</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                        </div>      <!--  infoWrap  -->
+                       
+                        <div  class="infoWrap">
+                            <div class="infoText">구매 정보</div>
+                            <table>
+                                <tbody class="prdDetailInfo">
+                                    <tr>
+                                        <th id="" class="detailInfoHead">배송</th><td>배송정보/예상도착시간 등</td>
+                                    </tr>
+                                    <tr>
+                                        <th id="" class="detailInfoHead">할인/혜택</th><td>이런분들께 좋습니다.</td>
+                                    </tr>
+                                    <tr>
+                                        <th id="" class="detailInfoHead">결제</th><td>결제방식에 대한 정보</td>
+                                    </tr>
+                                    <tr>
+                                        <th id="" class="detailInfoHead">사용가능한 쿠폰</th><td>쿠폰을 시스템에서 알아봐줌</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                                             
+                    </div>      <!--  infoContainer  -->
+
+                    
+
+                </div>      <!-- prdDetailWrap  -->
+            </div>     <!-- prdInfoCateContainer  -->
+            
+
+
+            <!-- product promo Line-->
+            <div id="infoCateLine">
+                <ul id="infoCateWrap" >
+                    <li><a href="#prdInfoCate">상품정보</a></li>
+                    <li id="prdPromoCate" class="infoCateTarget"><a href="#prdPromoCate">상품설명</a></li>
+                    <li><a href="#prdDetailCate">상세정보</a></li>
+                    <li><a href="#prdReviewCate">상품후기</a></li>
+                    <li><a href="#prdQnACate">상품문의</a></li>
+                    <li><a href="#prdSellerInfoCate">판매자정보</a></li>
+                </ul>
+            </div>
+            <div id="prdPromoCateContainer">
+                <div>
+                    <div>판매자 측에서 제작한 상품홍보 이미지가 게시되는 곳입니다.</div>
+                    <img src="https://via.placeholder.com/800x1000" />
+                </div>
+                
+            </div>
+
+
+            <!-- product detail info Line -->
+            <div id="infoCateLine">
+                <ul id="infoCateWrap" >
+                    <li><a href="#prdInfoCate">상품정보</a></li>
+                    <li><a href="#prdPromoCate">상품설명</a></li>
+                    <li id="prdDetailCate" class="infoCateTarget"><a href="#prdDetailCate">상세정보</a></li>
+                    <li><a href="#prdReviewCate">상품후기</a></li>
+                    <li><a href="#prdQnACate">상품문의</a></li>
+                    <li><a href="#prdSellerInfoCate">판매자정보</a></li>
+                </ul>
+            </div>
+            <div id="prdDetailCateContainer">
+                <table class="detailCateTable">
+                    <tbody class="">
+                        <tr>
+                            <th>정보1</th><td>내용11111111111111111111</td>
+                            <th>정보2</th><td>내용2</td>
+                        </tr>
+                        <tr>
+                            <th>정보3</th><td>내용3</td>
+                            <th>정보4</th><td>내용44444444444444</td>
+                        </tr>
+                        <tr>
+                            <th>정보5</th><td>내용5</td>
+                            <th>정보6</th><td>내용6</td>
+                        </tr>
+                        <tr>
+                            <th>정보7</th><td>내용33333333333337</td>
+                            <th>정보8</th><td>내용8</td>
+                        </tr>
+                        <tr>
+                            <th>정보9</th><td>내용9</td>
+                            <th>정보10</th><td>내용10</td>
+                        </tr>
+                        <tr>
+                            <th>정보12</th><td>내용11</td>
+                            <th>정보12</th><td>내용12</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+
+            <!-- product review Line-->
+            <div id="infoCateLine">
+                <ul id="infoCateWrap" >
+                    <li><a href="#prdInfoCate">상품정보</a></li>
+                    <li><a href="#prdPromoCate">상품설명</a></li>
+                    <li><a href="#prdDetailCate">상세정보</a></li>
+                    <li id="prdReviewCate" class="infoCateTarget"><a href="#prdReviewCate">상품후기</a></li>
+                    <li><a href="#prdQnACate">상품문의</a></li>
+                    <li><a href="#prdSellerInfoCate">판매자정보</a></li>
+                </ul>
+            </div>
+            <div id="prdReviewContainer">
+
+            </div>
+
+
+            <!-- product QnA Line -->
+            <div id="infoCateLine">
+                <ul id="infoCateWrap" >
+                    <li><a href="#prdInfoCate">상품정보</a></li>
+                    <li><a href="#prdPromoCate">상품설명</a></li>
+                    <li><a href="#prdDetailCate">상세정보</a></li>
+                    <li><a href="#prdReviewCate">상품후기</a></li>
+                    <li id="prdQnACate" class="infoCateTarget"><a href="#prdQnACate">상품문의</a></li>
+                    <li><a href="#prdSellerInfoCate">판매자정보</a></li>
+                </ul>
+            </div>
+
+            <div id="prdPQnACateContainer">
+
+            </div>
+
+
+            <!-- product seller info Line-->
+            <div id="infoCateLine">
+                <ul id="infoCateWrap" >
+                    <li><a href="#prdInfoCate">상품정보</a></li>
+                    <li><a href="#prdPromoCate">상품설명</a></li>
+                    <li><a href="#prdDetailCate">상세정보</a></li>
+                    <li><a href="#prdReviewCate">상품후기</a></li>
+                    <li><a href="#prdQnACate">상품문의</a></li>
+                    <li id="prdSellerInfoCate" class="infoCateTarget"><a href="#prdSellerInfoCate">판매자정보</a></li>
+                </ul>
+            </div>
+            <div id="prdPSellerInfoContainer">
+                <table class="detailCateTable">
+                    <tbody class="">
+                        <tr>
+                            <th>정보1</th><td>내용11111111111111111111</td>
+                            <th>정보2</th><td>내용2</td>
+                        </tr>
+                        <tr>
+                            <th>정보3</th><td>내용3</td>
+                            <th>정보4</th><td>내용44444444444444</td>
+                        </tr>
+                        <tr>
+                            <th>정보5</th><td>내용5</td>
+                            <th>정보6</th><td>내용6</td>
+                        </tr>
+                        <tr>
+                            <th>정보7</th><td>내용33333333333337</td>
+                            <th>정보8</th><td>내용8</td>
+                        </tr>
+                        <tr>
+                            <th>정보9</th><td>내용9</td>
+                            <th>정보10</th><td>내용10</td>
+                        </tr>
+                        <tr>
+                            <th>정보12</th><td>내용11</td>
+                            <th>정보12</th><td>내용12</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>    
+                    
+        </div>  <!-- mainWrap -->
+
+
+    </div>     <!-- Body Line -->
+
+
+    <div id="footer">
+            하단
+    </div>
+    
+
+    <script type="text/javascript">
+        const ingrs = document.querySelectorAll(".ingr");
+        const ingrInfoBox = document.querySelector("#ingrInfoBox");
+
+        ingrs.forEach(ingr=>{
+            ingr.addEventListener("mouseover", ({target})=>{
+                document.querySelectorAll(".ingrInfoText").forEach(node=>{
+                    if(node.getAttribute("for") === target.id
+                        && ingrInfoBox.classList.contains("infoBoxHide")){
+                        ingrInfoBox.innerHTML = node.innerHTML;
+                        ingrInfoBox.classList.remove("infoBoxHide");
+                        
+                    }
+                });
+            });
+            ingr.addEventListener("mouseout", ({target})=>{
+                if(!ingrInfoBox.classList.contains("infoBoxHide")){
+                    ingrInfoBox.classList.add("infoBoxHide");
+                    ingrInfoBox.innerHTML = "";
+                }
+            });
+        });
+        
+    </script>
+</body>
+</html>
