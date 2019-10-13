@@ -269,6 +269,78 @@ ul{
 
 
 
+/* product QnA Category */
+#prdPQnACateContainer{
+    display:flex; justify-content:center;   margin : 40px;
+}
+#prdQnACateWrap{
+    display:flex; align-items:center; flex-direction: column;
+    width : 1200px;
+}
+#prdQnACateTextWrap{
+    width : 100%; position:relative; margin :20px 10px; 
+}
+#prdQnACateTitle{
+    font-size : 25px;
+}
+#prdQnACateBtn{
+    position:absolute; right:10px; top:0; padding : 10px 20px; background-color:#008528;  color:white; cursor:pointer;
+}
+
+
+/* product QnA Table */
+#prdQnATableWrap{
+    width : 100%;margin : 40px 20px;
+}
+#prdQnATable{
+    width : 100%; 
+    border-collapse: collapse;
+}
+#prdQnATable thead{
+    background-color:#dfdfdf;
+}
+#prdQnATable thead th{
+    padding: 8px 15px; text-align:center;
+    
+}
+#prdQnATable tbody tr{
+    border-bottom:1px solid #979797;
+    
+}
+#prdQnATable td{
+    padding : 15px; text-align: center;
+}
+.qnaTitle{
+    width : 50%; text-align:left;
+}
+.qnaResultIng{
+    color:#abacad;
+}
+.qnaResultDone{
+    color:#0033a0;
+}
+
+/* QnA page Num Buttons */
+
+#qnaNumLine{
+}
+#qnaNumBtnWrap{
+    display:flex; 
+}
+#qnaNumWrap{
+    margin : auto 0;
+}
+.qnaPageBtn{
+    cursor:pointer; margin : 8px; padding : 5px; background-color: #ececec;
+}
+.qnaPageBtnActive{
+    background-color: #e26969;
+}
+
+
+
+
+
 
 #prdPSellerInfoContainer{
     display:flex; justify-content:center;
