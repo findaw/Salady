@@ -1,0 +1,58 @@
+#joinHeadText{
+    font-size : 30px; font-weight: bold;
+}
+#joinContainer{
+    margin : 80px 40px;
+}
+#joinForm{
+    display:flex; flex-direction: column; align-items: center;
+}
+#joinTable {
+    width:100%; border-collapse:collapse;
+}
+#joinTable th, #joinTable td{
+    padding : 40px; border-bottom : 2px solid #d2c6ff;
+    
+}
+#joinTable th{
+
+}
+#joinTable td{
+    width : 80%;
+}
+.textInput{
+    width : 80%; max-width:300px; height : 20px;  border:none; padding : 10px;background-color:#e3dcfa;
+}
+
+#joinBtn{
+    border:none;
+    background-color:#54346e;
+    padding : 20px; margin: 50px 0 10px 0;
+    font-size:17px; font-weight: bold;
+    width : 300px;
+    color:white;
+}
+
+/* message */
+
+.inputMsg{
+    margin-top : 10px;
+}
+#pwInputMsg{
+    color:#7e7e7e;
+}
+#pwChkInputMsg{
+    color:#f0241d;
+}
+#nameInputMsg{
+
+}
+#birthInputMsg{
+    color:#f0241d;
+}
+#idInputMsg{
+
+}
+#submitBtnMsg{
+    text-align:center; color:#f0241d;
+}
