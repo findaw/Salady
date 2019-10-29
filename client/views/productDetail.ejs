@@ -4,53 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="productDetail.css" />
+    <link rel="stylesheet" href="/css/header.css" />
+    <link rel="stylesheet" href="/css/footer.css" />
+    <link rel="stylesheet" href="/css/productDetail.css" />
 
     <title>제품 상세 페이지</title>
-
-    <style>
-   
-    </style>
 
 
 </head>
 <body>
 
-     <div id="headerLine">
-        <div id="headerWrap">
-            <div id="headLine" class="line">
-                <div id="headWrap" class="wrap">
-                    <div id="logoWrap">
-                        <a href="#main"><img id="logo" src="img/Salady_logo.png" /></a>
-                    </div>
-                    <div id="serachBarWrap" >
-                        <input id="searchBar" type="text" placeholder="검색할 내용" />
-                        <img src="img/search.png" />
-                    </div>
-                    <div id="userBtnsWrap">
-                        <ul>
-                            <li><a href="#login"><img class="userBtnImg" src="img/login.png" />로그인</a></li>
-                            <li><a href="#user"><img class="userBtnImg" src="img/user.png" />회원가입</a></li>
-                            <li><a href="#setting"><img class="userBtnImg" src="img/setting.png" />설정</a></li>
-                        </ul> 
-                    </div>
-                </div>
-            </div>  <!-- headLine -->
-            
-            <div id="cateLine" class="line">
-                    
-                <ul id="cateBtnsWrap" class="wrap">
-                    <li><a href="#product">건강식품</a></li>
-                    <li><a href="#bestitem">나만의추천제품</a></li>
-                    <li><a href="#review">후기모음</a></li>
-                    <li><a href="#q&a">고객상담</a></li>
-            
-                </ul> 
-                
-            </div>  <!-- cateLine -->
-        </div>
-    </div>      <!-- Header Line-->
-
+    <%- include template/header.ejs %>
 
 
     <div id="bodyLine">
@@ -489,34 +453,8 @@
     </div>     <!-- Body Line -->
 
 
-    <div id="footer">
-            하단
-    </div>
-    
+    <% include template/productDetail.ejs %>
 
-    <script type="text/javascript">
-        const ingrs = document.querySelectorAll(".ingr");
-        const ingrInfoBox = document.querySelector("#ingrInfoBox");
-
-        ingrs.forEach(ingr=>{
-            ingr.addEventListener("mouseover", ({target})=>{
-                document.querySelectorAll(".ingrInfoText").forEach(node=>{
-                    if(node.getAttribute("for") === target.id
-                        && ingrInfoBox.classList.contains("infoBoxHide")){
-                        ingrInfoBox.innerHTML = node.innerHTML;
-                        ingrInfoBox.classList.remove("infoBoxHide");
-                        
-                    }
-                });
-            });
-            ingr.addEventListener("mouseout", ({target})=>{
-                if(!ingrInfoBox.classList.contains("infoBoxHide")){
-                    ingrInfoBox.classList.add("infoBoxHide");
-                    ingrInfoBox.innerHTML = "";
-                }
-            });
-        });
-        
-    </script>
+    <script type="text/javascript" src="js/productDetail.js"></script>
 </body>
 </html>
