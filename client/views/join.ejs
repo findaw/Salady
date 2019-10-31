@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="/css/header.css" />
     <link rel="stylesheet" href="/css/body.css" />
     <link rel="stylesheet" href="/css/footer.css" />
-    <link rel="stylesheet"  href="/css/join.css" />
+    <link rel="stylesheet"  href="/css/join/join.css" />
     
     <title>회원가입</title>
 
@@ -23,79 +23,19 @@
         <div id="mainWrap">
             <div id="joinContainer">
                 <div id="joinHeadText">회원가입 </div>
-                <form id="joinForm" action="/api/join/account" method="POST">
-                    <table id="joinTable">
-                        <tbody id="">
-                            <tr><th colspan="2">계정정보</th></tr>
-                            <tr>
-                                <th>
-                                    <label for="idInput">아이디 </label>
-                                </th>
-                                <td>
-                                    <input class="textInput" id="idInput" name="id" type="text" />
-                                    <div id="idInputMsg" class="inputMsg"></div>
-                                </td>
-                            </tr>
-            
-                            <tr>
-                                <th>
-                                    <label for="pwInput">비밀번호 </label>
-                                </th>
-                                <td>
-                                    <input class="textInput" id="pwInput" name="pw" type="password" maxlength="30"/>
-                                    <div id="pwInputMsg" class="inputMsg">최대 30글자</div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th>
-                                    <label for="pwChkInput">비밀번호 확인</label>
-                                </th>
-                                <td>
-                                    <input class="textInput" id="pwChkInput" type="password" />
-                                    <div id="pwChkInputMsg" class="inputMsg"></div>
-                                </td>
-                            </tr>
-                            <tr><th colspan="2">개인정보</th></tr>
-                            <tr>
-                                <th>
-                                    <label for="nameInput">이름</label>
-                                </th>
-                                <td>
-                                    <input class="textInput" name="name" id="nameInput" type="text" />
-                                </td>
-                            </tr>
-                            <tr>
-                                <th>
-                                    <label for="birthInput">주민번호 앞자리</label>
-                                </th>
-                                <td>
-                                    <input class="textInput" name="birth" id="birthInput" type="text" maxlength="6"/>
-                                    <div id="birthInputMsg" class="inputMsg"></div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th>
-                                    <label for="genderInput">성별</label>
-                                </th>
-                                <td>
-                                    <input id="manInput" type="radio" name="gender" value="man"/>
-                                    <label for="manInput">남</label>
-                                    <input id="womanInput" type="radio" name="gender" value="woman" checked/>
-                                    <label for="womanInput">여</label>
-                                </td>
-                            </tr>
-                    
-                            
-                        </tbody>
-                    </table>
-                    <div>
-                        <input type="submit" id="joinBtn" value="가입하기"/>
-                        <div id="submitBtnMsg" class="inputMsg"></div>
+                <div id="joinTypeWrap">
+                    <div class="joinTypeitem">
+                        <div class="joinType"><span class="joinTypeTitle">개인구매</span> 회원</div>
+                        <div class="joinTypeText"></div>
+                        <a href="/view/join/member"><button id="joinMemberBtn" class="joinBtn">가입하기</button></a>
                     </div>
-                </form>
-        
+                    <div class="joinTypeitem">
+                        <div class="joinType"><span class="joinTypeTitle">사업자 판매</span> 회원</div>
+                        <div class="joinTypeText"></div>
+                        <a href="/view/join/seller"><button id="joinSellerBtn" class="joinBtn">가입하기</button></a>
+                    </div>
+                </div>
             </div>
-            
 
         </div>  <!-- mainWrap -->
 
@@ -105,8 +45,6 @@
 
 
     <%- include template/footer.ejs %>
-        
-    <script type="text/javascript" src="js/join.js"></script>
     
 </body>
 </html>

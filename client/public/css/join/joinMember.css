@@ -25,12 +25,8 @@
 }
 
 #joinBtn{
-    border:none;
-    background-color:#54346e;
-    padding : 20px; margin: 50px 0 10px 0;
-    font-size:17px; font-weight: bold;
-    width : 300px;
-    color:white;
+    background-color:#54346e; padding : 20px; margin: 50px 0 10px 0; border:none; 
+    font-size:17px; font-weight: bold; width : 300px; color:white; cursor: pointer;
 }
 
 /* message */
