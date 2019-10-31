@@ -17,13 +17,13 @@
                     <a href="index.html"><img src="img/Salady_logo.png" /></a>
                 </div>
                 <div>
-                    <form>
+                    <form id="loginForm" action="/api/login/account" method="POST">
                         <div>
                             <div class="inputWrap">
-                                <input type="text" placeholder="아이디" />
+                                <input type="text" id="idInput" name="id" placeholder="아이디" />
                             </div>
                             <div class="inputWrap">
-                                <input type="password" placeholder="비밀번호" />
+                                <input type="password" id="pwInput" name="pw" placeholder="비밀번호" />
                             </div>
                         </div>
                         <div id="loginServiceLine">
@@ -50,6 +50,6 @@
         </div>  <!-- mainWrap -->
     </div>     <!-- Body Line -->
 
-
+    <script type="text/javascript" src="js/login.js"></script>
 </body>
 </html>

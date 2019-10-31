@@ -1,0 +1,55 @@
+ 
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8" />
+        
+        <title>Salady</title>
+        <link rel="stylesheet" href="/css/header.css" />
+        <link rel="stylesheet" href="/css/body.css" />
+        <link rel="stylesheet" href="/css/footer.css" />
+        <link rel="stylesheet" href="/css/welcome.css" />
+    </head>
+    <body>
+        <%- include template/header.ejs %>
+
+        <div id="bodyLine">
+
+            <div id="leftSide">
+                왼쪽 사이드
+            </div>  <!-- left Side-->
+            
+            
+            <div id="mainWrap">
+                <div id="welcomeContainer">
+                    <div id="welcomeWrap">
+                        <div id="welcomeTitle">환영합니다!</div>
+                        <div id="welcomeText">가입이 완료되었습니다. 로그인 후 서비스를 이용해주세요.</div>
+                        <button id="loginBtn">로그인 하러가기</button>
+                    </div>
+                </div>
+                
+            
+            
+            </div>  <!-- mainWrap -->
+            
+            
+            <div id="rightSide">
+                오른쪽사이드
+            </div>  <!-- right Side-->
+                    
+        </div>     <!-- Body Line -->
+
+
+        <%- include template/footer.ejs %>
+
+        <script type="text/javascript">
+            const loginBtn = document.getElementById("loginBtn");
+            loginBtn.addEventListener("click", (e)=>{
+                location.href="/view/login";
+            });
+        </script>
+
+     
+    </body>
+</html>

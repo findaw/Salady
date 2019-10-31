@@ -11,6 +11,9 @@ router.get("/login", (req, res)=>{
 router.get("/join", (req, res)=>{
     res.status(200).render("join");
 });
+router.get("/welcome", (req, res)=>{
+    res.status(200).render("welcome");
+});
 router.get("/product", (req, res)=>{
     res.status(200).render("product");
 });

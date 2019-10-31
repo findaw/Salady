@@ -1,13 +1,14 @@
 const express = require("express");
 const router = express.Router();
-const viewRouter = require("./viewRouter.js");
 const path = require("path");
 
 router.use(express.static("client/public"));
 router.get("/", (req, res)=>{
     res.status(200).render("home");
 });
-router.use("/view", viewRouter);
+
+router.use("/view", require("./viewRouter.js"));
+router.use("/api", require("./apiRouter.js"));
 
 
 

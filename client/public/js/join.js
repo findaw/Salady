@@ -5,6 +5,7 @@ const pwInput = document.getElementById("pwInput");
 const pwChkInput = document.getElementById("pwChkInput");
 const nameInput = document.getElementById("nameInput");
 const birthInput = document.getElementById("birthInput");
+const genderInput = document.getElementsByName("gender");
 
 const idInputMsg = document.getElementById("idInputMsg");
 const pwInputMsg = document.getElementById("pwInputMsg");
@@ -13,23 +14,23 @@ const nameInputMsg = document.getElementById("nameInputMsg");
 const birthInputMsg = document.getElementById("birthInputMsg");
 const submitBtnMsg = document.getElementById("submitBtnMsg");
 
-
 joinForm.addEventListener("submit", (e)=>{
-    e.preventDefault();
+    
     if(idInput.value.trim() === "" || pwInput.value.trim() === "" || pwChkInput.value.trim() === "" || nameInput.value.trim() === "" || birthInput.value.trim() === ""
     ){
         submitBtnMsg.innerText = "※입력되지 않은 값이 있습니다.";
-        return false;
+        e.preventDefault();
     }else {
         submitBtnMsg.innerText = "";
     }
-
     if(pwChkInput.value !== pwChkInput.value){
-        
-        return false;
+        e.preventDefault();
+    }else if(birthInput.value < 100000){
+        alert("주민번호 6자리를 정확히 입력해주세요.");
+        birthInput.value = "";
+        e.preventDefault();
     }
 
-    return false;
 });
 pwInput.addEventListener("keyup", ()=>{
     
@@ -52,7 +53,10 @@ birthInput.addEventListener("keyup", (e)=>{
     if(e.target.value.trim() !== ""  && !regex.test(e.target.value)){
         alert("숫자만 입력하세요");
         birthInput.value = "";
-    }else{
+    }
+    else{
         birthInputMsg.innerText ="";
     }
 });
+
+
