@@ -3,13 +3,17 @@ const router = express.Router();
 const formidable  = require("formidable");
 const mysql = require("mysql2/promise");
 const fs = require("fs");
-const confStr = fs.readFileSync("./database.json");
+const jwt = require("jsonwebtoken");
+const dbConfStr = fs.readFileSync("./database.json");
+const confStr = fs.readFileSync("./config.json");
 const conf = JSON.parse(confStr);
+const secretKey = conf.secretKey;
+const dbConf = JSON.parse(dbConfStr);
 const pool = mysql.createPool({
-    host : conf.host,
-    user : conf.user,
-    password : conf.password,
-    database : conf.database,
+    host : dbConf.host,
+    user : dbConf.user,
+    password : dbConf.password,
+    database : dbConf.database,
     connectionLimit:20,
     waitForConnections:false,
 });
@@ -84,6 +88,30 @@ router.post("/login/account", (req ,res)=>{
             if(rows[0]){
                 let obj = rows[0];
                // console.log(obj);
+                jwt.sign(
+                    {
+                        userId : obj.id,
+                        userName : obj.name,
+                        userType : obj.type
+                    },
+                    secretKey,
+                    {
+                        issuer : "salady",
+                        expiresIn : "1d",
+                        subject : "userInfo",
+                        
+                    },(err,token)=>{
+                        if(err) {
+                            console.log(err);
+                        }
+                        else {
+                            console.log(token);
+                            req.app.set("userName", obj.name);
+                            req.app.set("userType", obj.type);
+                        }
+                    }
+                );
+
                 res.status(200).send("Success...<script type='text/javascript'>alert('완료되었습니다.'); location.href='/';</script>");
             }else{
                 res.status(200).send("Failed...<script type='text/javascript'>alert('일치하지 않습니다.'); history.back();</script>");        

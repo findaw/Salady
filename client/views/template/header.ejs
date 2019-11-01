@@ -11,9 +11,9 @@
                 </div>
                 <div id="userBtnsWrap">
                     <ul>
-                        <%if(type==="member"){%>
+                        <%if(type === 1){%>
                             <li><a href="/view/member"><img class="userBtnImg" src="/img/user.png" />마이페이지</a></li>
-                        <%}else if(type==="seller"){%>
+                        <%}else if(type===2){%>
                             <li><a href="/view/manage"><img class="userBtnImg" src="/img/user.png" />관리페이지</a></li>
                         <%}else{%>
                             <li><a href="/view/login"><img class="userBtnImg" src="/img/user.png" />로그인/회원가입</a></li>

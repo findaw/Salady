@@ -4,7 +4,8 @@ const path = require("path");
 
 router.use(express.static("client/public"));
 router.get("/", (req, res)=>{
-    res.status(200).render("home",{"type":""});
+    let name = req.app.get("userName");
+    res.status(200).render("home",{"type":req.app.get("userType"), "name":name});
 });
 
 router.use("/view", require("./viewRouter.js"));

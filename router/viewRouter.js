@@ -10,28 +10,28 @@ router.get("/login", (req, res)=>{
 });
 
 router.get("/join", (req, res)=>{
-    res.status(200).render("join",{"type":"member"});
+    res.status(200).render("join",{"type":req.app.get("userType")});
 });
 router.get("/join/member", (req, res)=>{
-    res.status(200).render("joinMember",{"type":"member"});
+    res.status(200).render("joinMember",{"type":req.app.get("userType")});
 });
 router.get("/welcome", (req, res)=>{
-    res.status(200).render("welcome",{"type":"member"});
+    res.status(200).render("welcome",{"type":req.app.get("userType")});
 });
 router.get("/product", (req, res)=>{
-    res.status(200).render("product",{"type":"member"});
+    res.status(200).render("product",{"type":req.app.get("userType")});
 });
 router.get("/manage", (req, res)=>{
-    res.status(200).render("manage",{"type":"member"});
+    res.status(200).render("manage",{"type":req.app.get("userType")});
 });
 router.get("/productDetail", (req, res)=>{
-    res.status(200).render("productDetail",{"type":"member"});
+    res.status(200).render("productDetail",{"type":req.app.get("userType")});
 });
 router.get("/shoppingCart", (req, res)=>{
-    res.status(200).render("shoppingCart",{"type":"member"});
+    res.status(200).render("shoppingCart",{"type":req.app.get("userType")});
 });
 router.get("/member", (req, res)=>{
-    res.status(200).render("member",{"type":"member"});
+    res.status(200).render("member", {"type":req.app.get("userType")});
 });
 
 module.exports = router;

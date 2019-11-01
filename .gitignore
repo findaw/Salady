@@ -2,5 +2,8 @@
 # 모듈
 /node_modules
 
-# 데이터베이스 접속
+# 데이터베이스 설정파일
 /database.json
+
+#설정 파일
+/config.json
