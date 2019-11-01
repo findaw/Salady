@@ -1,0 +1,34 @@
+#joinHeadText{
+    font-size : 30px; font-weight: bold;
+}
+#joinContainer{
+    margin : 80px 40px;
+}
+#joinTypeWrap{
+    display:flex; flex-wrap:wrap; border:1px solid #b8b8b8;; margin : 70px 20px;
+    background-color:#fdfdfd;
+}
+.joinTypeitem{
+    padding : 80px; 
+
+}
+.joinTypeitem:hover{
+
+
+}
+.joinType{
+    font-size : 20px; font-weight:bold; margin-bottom:20px;
+}
+.joinTypeTitle{
+    color:#01a767;
+}
+.joinTypeText{
+
+}
+.joinBtn{
+    width : 100%; padding : 10px; border:2px solid #00d3a5; font-size:18px; 
+    margin-top : 20px; background-color:white; border-radius: 5px; cursor: pointer;
+}
+.joinBtn:hover{
+    background-color:#008f88; color:white;
+}

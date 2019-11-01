@@ -6,6 +6,8 @@ const path = require("path");
 
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "client/views"));
+app.set("userType", -1);
+app.set("userName", null);
 app.use("/", router);
 
 app.listen(port, ()=>{

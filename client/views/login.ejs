@@ -14,16 +14,26 @@
         <div id="mainWrap">
             <div id="loginPageWrap">
                 <div id="logoWrap">
-                    <a href="index.html"><img src="img/Salady_logo.png" /></a>
+                    <a href="/"><img src="/img/Salady_logo.png" /></a>
                 </div>
                 <div>
-                    <form>
+                    <form id="loginForm" action="/api/login/account" method="POST">
                         <div>
-                            <div class="inputWrap">
-                                <input type="text" placeholder="아이디" />
+                            <div class="radioWrap">
+                                <span>
+                                    <input type="radio" id="member" name="types" value="member" checked/>
+                                    <label for="member">개인 회원</label>
+                                </span>
+                                <span>
+                                    <input type="radio" id="seller" name="types" values="seller" />
+                                    <label for="seller">판매자 회원</label>
+                                </span>
                             </div>
                             <div class="inputWrap">
-                                <input type="password" placeholder="비밀번호" />
+                                <input type="text" id="idInput" name="id" placeholder="아이디" />
+                            </div>
+                            <div class="inputWrap">
+                                <input type="password" id="pwInput" name="pw" placeholder="비밀번호" />
                             </div>
                         </div>
                         <div id="loginServiceLine">
@@ -41,7 +51,7 @@
 
                 </div>
                 <div id="joinLine">
-                    <button id="joinBtn">회원 가입</button>
+                    <a href="/view/join"><button id="joinBtn">회원 가입</button></a>
                 </div>
 
 
@@ -50,6 +60,6 @@
         </div>  <!-- mainWrap -->
     </div>     <!-- Body Line -->
 
-
+    <script type="text/javascript" src="js/login.js"></script>
 </body>
 </html>
