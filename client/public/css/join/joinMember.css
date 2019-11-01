@@ -28,11 +28,19 @@
     background-color:#54346e; padding : 20px; margin: 50px 0 10px 0; border:none; 
     font-size:17px; font-weight: bold; width : 300px; color:white; cursor: pointer;
 }
+#idCheckBtn{
+    padding : 8px; margin:10px; display:inline; border-radius:5px; font-weight: bold;
+    color:#54346e; border:2px solid #54346e; background-color:white; cursor:pointer;
+
+}
 
 /* message */
 
 .inputMsg{
     margin-top : 10px;
+}
+#idInputMsg{
+    color:#f0241d;
 }
 #pwInputMsg{
     color:#7e7e7e;

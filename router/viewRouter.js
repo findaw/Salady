@@ -10,25 +10,28 @@ router.get("/login", (req, res)=>{
 });
 
 router.get("/join", (req, res)=>{
-    res.status(200).render("join");
+    res.status(200).render("join",{"type":"member"});
 });
 router.get("/join/member", (req, res)=>{
-    res.status(200).render("joinMember");
+    res.status(200).render("joinMember",{"type":"member"});
 });
 router.get("/welcome", (req, res)=>{
-    res.status(200).render("welcome");
+    res.status(200).render("welcome",{"type":"member"});
 });
 router.get("/product", (req, res)=>{
-    res.status(200).render("product");
+    res.status(200).render("product",{"type":"member"});
 });
 router.get("/manage", (req, res)=>{
-    res.status(200).render("manage");
+    res.status(200).render("manage",{"type":"member"});
 });
 router.get("/productDetail", (req, res)=>{
-    res.status(200).render("productDetail");
+    res.status(200).render("productDetail",{"type":"member"});
 });
 router.get("/shoppingCart", (req, res)=>{
-    res.status(200).render("shoppingCart");
+    res.status(200).render("shoppingCart",{"type":"member"});
+});
+router.get("/member", (req, res)=>{
+    res.status(200).render("member",{"type":"member"});
 });
 
 module.exports = router;

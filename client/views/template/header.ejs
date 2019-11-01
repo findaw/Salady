@@ -11,7 +11,13 @@
                 </div>
                 <div id="userBtnsWrap">
                     <ul>
-                        <li><a href="/view/login"><img class="userBtnImg" src="/img/user.png" />로그인/회원가입</a></li>
+                        <%if(type==="member"){%>
+                            <li><a href="/view/member"><img class="userBtnImg" src="/img/user.png" />마이페이지</a></li>
+                        <%}else if(type==="seller"){%>
+                            <li><a href="/view/manage"><img class="userBtnImg" src="/img/user.png" />관리페이지</a></li>
+                        <%}else{%>
+                            <li><a href="/view/login"><img class="userBtnImg" src="/img/user.png" />로그인/회원가입</a></li>
+                        <%}%>
                         <li><a href="/view/shoppingCart"><img class="userBtnImg" src="/img/login.png" />장바구니</a></li>
                         <li><a href="/view/setting"><img class="userBtnImg" src="/img/setting.png" />설정</a></li>
                     </ul> 

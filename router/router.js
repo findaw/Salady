@@ -4,7 +4,7 @@ const path = require("path");
 
 router.use(express.static("client/public"));
 router.get("/", (req, res)=>{
-    res.status(200).render("home");
+    res.status(200).render("home",{"type":""});
 });
 
 router.use("/view", require("./viewRouter.js"));
@@ -18,7 +18,7 @@ router.use((req, res, next)=>{
 })
 router.use((err, req, res, next)=>{
     console.log(err.stack);
-    res.status(500).render("error");
+    res.status(500).render("error",{"type":"member"});
     
 });
 

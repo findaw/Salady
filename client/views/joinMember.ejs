@@ -23,7 +23,7 @@
         <div id="mainWrap">
             <div id="joinContainer">
                 <div id="joinHeadText">회원가입 </div>
-                <form id="joinForm" action="/api/join/account" method="POST">
+                <form id="joinForm" action="/api/join/member" method="POST">
                     <table id="joinTable">
                         <tbody id="">
                             <tr><th colspan="2">계정정보</th></tr>
@@ -33,8 +33,10 @@
                                 </th>
                                 <td>
                                     <input class="textInput" id="idInput" name="id" type="text" />
+                                    <button type="button" id="idCheckBtn">중복 검사</button>
                                     <div id="idInputMsg" class="inputMsg"></div>
                                 </td>
+                              
                             </tr>
             
                             <tr>
@@ -78,9 +80,9 @@
                                     <label for="genderInput">성별</label>
                                 </th>
                                 <td>
-                                    <input id="manInput" type="radio" name="gender" value="man"/>
+                                    <input id="manInput" type="radio" name="gender" value="m"/>
                                     <label for="manInput">남</label>
-                                    <input id="womanInput" type="radio" name="gender" value="woman" checked/>
+                                    <input id="womanInput" type="radio" name="gender" value="w" checked/>
                                     <label for="womanInput">여</label>
                                 </td>
                             </tr>

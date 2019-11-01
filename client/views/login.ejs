@@ -14,11 +14,21 @@
         <div id="mainWrap">
             <div id="loginPageWrap">
                 <div id="logoWrap">
-                    <a href="/"><img src="img/Salady_logo.png" /></a>
+                    <a href="/"><img src="/img/Salady_logo.png" /></a>
                 </div>
                 <div>
                     <form id="loginForm" action="/api/login/account" method="POST">
                         <div>
+                            <div class="radioWrap">
+                                <span>
+                                    <input type="radio" id="member" name="types" value="member" checked/>
+                                    <label for="member">개인 회원</label>
+                                </span>
+                                <span>
+                                    <input type="radio" id="seller" name="types" values="seller" />
+                                    <label for="seller">판매자 회원</label>
+                                </span>
+                            </div>
                             <div class="inputWrap">
                                 <input type="text" id="idInput" name="id" placeholder="아이디" />
                             </div>
