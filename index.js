@@ -8,6 +8,7 @@ app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "client/views"));
 app.set("userType", -1);
 app.set("userName", null);
+app.set("projectDir", "D:/ll/project/Salady/");
 app.use("/", router);
 
 app.listen(port, ()=>{
