@@ -1,34 +1,61 @@
+/* 회원가입 페이지 UI 중복 코드 분리한것*/
+
 #joinHeadText{
     font-size : 30px; font-weight: bold;
 }
 #joinContainer{
     margin : 80px 40px;
 }
-#joinTypeWrap{
-    display:flex; flex-wrap:wrap; border:1px solid #b8b8b8;; margin : 70px 20px;
-    background-color:#fdfdfd;
+#joinForm{
+    display:flex; flex-direction: column; align-items: center;
 }
-.joinTypeitem{
-    padding : 80px; 
+#joinTable {
+    width:100%; border-collapse:collapse;
+}
+#joinTable th, #joinTable td{
+    padding : 40px; border-bottom : 2px solid #d2c6ff;
+    
+}
+#joinTable th{
 
 }
-.joinTypeitem:hover{
+#joinTable td{
+    width : 80%;
+}
+.textInput{
+    width : 80%; max-width:300px; height : 20px;  border:none; padding : 10px;background-color:#e3dcfa;
+}
 
+#joinBtn{
+    background-color:#54346e; padding : 20px; margin: 50px 0 10px 0; border:none; 
+    font-size:17px; font-weight: bold; width : 300px; color:white; cursor: pointer;
+}
+#idCheckBtn{
+    padding : 8px; margin:10px; display:inline; border-radius:5px; font-weight: bold;
+    color:#54346e; border:2px solid #54346e; background-color:white; cursor:pointer;
 
 }
-.joinType{
-    font-size : 20px; font-weight:bold; margin-bottom:20px;
+
+/* message */
+
+.inputMsg{
+    margin-top : 10px;
 }
-.joinTypeTitle{
-    color:#01a767;
+#idInputMsg{
+    color:#f0241d;
 }
-.joinTypeText{
+#pwInputMsg{
+    color:#7e7e7e;
+}
+#pwChkInputMsg{
+    color:#f0241d;
+}
+#nameInputMsg{
 
 }
-.joinBtn{
-    width : 100%; padding : 10px; border:2px solid #00d3a5; font-size:18px; 
-    margin-top : 20px; background-color:white; border-radius: 5px; cursor: pointer;
+#idInputMsg{
+
 }
-.joinBtn:hover{
-    background-color:#008f88; color:white;
+#submitBtnMsg{
+    text-align:center; color:#f0241d;
 }

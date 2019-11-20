@@ -24,7 +24,7 @@ exports.loginAccount =  (req ,res)=>{
             
 
             //첫번째인자에 결과값이 있음
-            let [rows] = await conn.query("SELECT * FROM member WHERE id=? AND pw=?",[fields.id, fields.pw]);
+            let [rows] = await conn.query("SELECT * FROM user WHERE id=? AND pw=?",[fields.id, fields.pw]);
             //console.log(rows[0]);
             
             if(rows[0]){

@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="/css/body.css" />
     <link rel="stylesheet" href="/css/footer.css" />
     <link rel="stylesheet"  href="/css/join/join.css" />
-    <link rel="stylesheet"  href="/css/join/joinMember.css" />
+    
     
     <title>회원가입</title>
 
@@ -23,8 +23,8 @@
 
         <div id="mainWrap">
             <div id="joinContainer">
-                <div id="joinHeadText">회원가입 </div>
-                <form id="joinForm" action="/api/join/member" method="POST">
+                <div id="joinHeadText">판매자 회원가입 </div>
+                <form id="joinForm" action="/api/join/seller" method="POST">
                     <table id="joinTable">
                         <tbody id="">
                             <tr><th colspan="2">계정정보</th></tr>
@@ -54,7 +54,7 @@
                                     <label for="pwChkInput">비밀번호 확인</label>
                                 </th>
                                 <td>
-                                    <input class="textInput" id="pwChkInput" type="password" autocomplete  />
+                                    <input class="textInput" id="pwChkInput" type="password" autocomplete />
                                     <div id="pwChkInputMsg" class="inputMsg"></div>
                                 </td>
                             </tr>
@@ -69,30 +69,19 @@
                             </tr>
                             <tr>
                                 <th>
-                                    <label for="birthInput">주민번호 앞자리</label>
+                                    <label for="sellerNoInput">사업자 번호</label>
                                 </th>
                                 <td>
-                                    <input class="textInput" name="birth" id="birthInput" type="text" maxlength="6"/>
-                                    <div id="birthInputMsg" class="inputMsg"></div>
+                                    <input class="textInput" name="sellerNo" id="sellerNoInput" type="text" maxlength="10"/>
                                 </td>
                             </tr>
-                            <tr>
-                                <th>
-                                    <label for="genderInput">성별</label>
-                                </th>
-                                <td>
-                                    <input id="manInput" type="radio" name="gender" value="m"/>
-                                    <label for="manInput">남</label>
-                                    <input id="womanInput" type="radio" name="gender" value="w" checked/>
-                                    <label for="womanInput">여</label>
-                                </td>
-                            </tr>
-                    
+                        
                             
                         </tbody>
                     </table>
                     <div>
                         <input type="submit" id="joinBtn" value="가입하기"/>
+                        <div id="submitBtnMsg" class="inputMsg"></div>
                         <div id="submitBtnMsg" class="inputMsg"></div>
                     </div>
                 </form>
@@ -108,8 +97,10 @@
 
 
     <%- include template/footer.ejs %>
-    <script type="text/javascript" src="/js/join/joinForm.js"></script>    
-    <script type="text/javascript" src="/js/join/joinMember.js"></script>
+    
+    <script type="text/javascript" src="/js/join/joinForm.js"></script>
+    <script type="text/javascript" src="/js/join/joinSeller.js"></script>
+
     
 </body>
 </html>

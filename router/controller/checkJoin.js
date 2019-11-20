@@ -16,7 +16,7 @@ exports.checkJoin = async(req,res)=>{
     let conn = null;
     try{
         conn = await pool.getConnection();
-        let [row] = await conn.query("SELECT id FROM member WHERE id=?",[req.params.id]);
+        let [row] = await conn.query("SELECT id FROM user WHERE id=?",[req.params.id]);
         console.log(row[0]);
         //no result => undefined 
         if(row[0]){
