@@ -21,6 +21,9 @@ router.get("/welcome", (req, res)=>{
 router.get("/product", (req, res)=>{
     res.status(200).render("product",{"type":req.app.get("userType")});
 });
+router.get("/productAdd", (req, res)=>{
+    res.status(200).render("productAdd",{"type":req.app.get("userType")});
+});
 router.get("/manage", (req, res)=>{
     res.status(200).render("manage",{"type":req.app.get("userType")});
 });

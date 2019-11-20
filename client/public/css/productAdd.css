@@ -1,0 +1,46 @@
+body{
+    
+    background-color:#e7eef5;
+}
+#contentContainer{
+    padding : 40px;
+}
+#paHeadLine{
+    padding : 40px 60px; margin-bottom: 80px; border-bottom:1px solid #3862d4;
+}
+#paHeadTitle{
+    font-size : 28px; font-weight: bold;
+}
+#paForm{
+    display:flex; align-items: center; flex-direction: column;
+}
+#paTable{
+    width:90%; background-color:white; border-collapse:collapse;
+}
+.paThPointText{
+    color:red;
+}
+#paTable th, #paTable td{
+    padding : 40px; border:1px solid #c7c7c7;
+}
+#paTable td{
+    width:80%;
+}
+.textInput{
+    width:80%; max-width:500px; height : 40px;
+}
+.volumeInput{
+    width:50px;
+}
+.inputMsg{
+    margin-top : 10px; color:#757575;
+}
+#indgChkWrap{
+    height:100px;overflow-y:scroll; display:flex; flex-wrap: wrap;
+}
+#indgChkWrap span{
+    margin : 10px;
+}
+#submitBtn{
+    margin :80px; padding : 10px 40px; font-size:20px; background-color:#008b2a; color:white; border:none; cursor:pointer;
+}
