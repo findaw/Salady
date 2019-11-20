@@ -10,10 +10,13 @@ router.get("/login", (req, res)=>{
 });
 
 router.get("/join", (req, res)=>{
-    res.status(200).render("join",{"type":req.app.get("userType")});
+    res.status(200).render("joinType",{"type":req.app.get("userType")});
 });
 router.get("/join/member", (req, res)=>{
     res.status(200).render("joinMember",{"type":req.app.get("userType")});
+});
+router.get("/join/seller", (req, res)=>{
+    res.status(200).render("joinSeller",{"type":req.app.get("userType")});
 });
 router.get("/welcome", (req, res)=>{
     res.status(200).render("welcome",{"type":req.app.get("userType")});

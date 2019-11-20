@@ -1,4 +1,3 @@
-
 const formidable  = require("formidable");
 const mysql = require("mysql2/promise");
 const fs = require("fs");
@@ -13,8 +12,8 @@ const pool = mysql.createPool({
     waitForConnections:false,
 });
 
-exports.joinMember = (req ,res)=>{
-    let userType = 3;
+exports.joinSeller = (req ,res)=>{
+    let userType = 2;
     let form = formidable.IncomingForm();
 
     form.parse(req, async(err, fields)=>{
@@ -27,7 +26,7 @@ exports.joinMember = (req ,res)=>{
             
             let [row] = await conn.query("SELECT no FROM user ORDER BY id DESC LIMIT 1");
             console.log(row[0].no);
-            await conn.query("INSERT INTO member (no,birth,gender) VALUES(?,?,?)",[row[0].no, fields.birth,fields.gender.toUpperCase()]);
+            await conn.query("INSERT INTO seller (no,sellerNo) VALUES(?,?)",[row[0].no, fields.sellerNo]);
 
             await conn.commit();
 
@@ -36,7 +35,7 @@ exports.joinMember = (req ,res)=>{
             console.log(err);
             conn.rollback();
 
-            res.status(200).send("Error...<script type='text/javascript'>alert('서버에러 발생');location.href='/view/join/member';</script>");
+            res.status(200).send("Error...<script type='text/javascript'>alert('서버에러 발생');location.href='/view/join/seller';</script>");
         }finally{
             if(conn){
                 conn.release();

@@ -32,6 +32,7 @@ router.post("/login/account", controller.loginAccount);
 router.post("/add/product", controller.addProduct);
 
 router.post("/join/member", controller.joinMember);
+router.post("/join/seller", controller.joinSeller);
 
 
 module.exports = router;
