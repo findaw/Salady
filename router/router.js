@@ -3,9 +3,14 @@ const router = express.Router();
 const path = require("path");
 
 router.use(express.static("client/public"));
+
 router.get("/", (req, res)=>{
-    let name = req.app.get("userName");
-    res.status(200).render("home",{"type":req.app.get("userType"), "name":name});
+    console.log({
+        ...req.app.get("defaultOption"),
+    });
+    res.status(200).render("home",{
+        ...req.app.get("defaultOption"),
+    });
 });
 
 router.use("/view", require("./viewRouter.js"));

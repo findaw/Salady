@@ -15,9 +15,10 @@ const pool = mysql.createPool({
 });
 
 exports.loginAccount =  (req ,res)=>{
+    
     let form = formidable.IncomingForm();
     form.parse(req, async (err, fields)=>{
-        //console.log(fields);
+        console.log(fields);
         let conn = null;
         try{
             conn = await pool.getConnection();
@@ -48,13 +49,22 @@ exports.loginAccount =  (req ,res)=>{
                         }
                         else {
                             console.log(token);
-                            req.app.set("userName", obj.name);
-                            req.app.set("userType", obj.type);
+                            
+                            req.app.set("userToken", token);
+                            require("./setDefaultOption.js").setDefaultOption(req.app, {
+                                name : obj.name,
+                                type : obj.type,
+                            });
+
+                            res.status(250).json({
+                                "token" : token
+                            });
                         }
                     }
                 );
 
-                res.status(200).send("Success...<script type='text/javascript'>alert('완료되었습니다.'); location.href='/';</script>");
+                
+                
             }else{
                 res.status(200).send("Failed...<script type='text/javascript'>alert('일치하지 않습니다.'); history.back();</script>");        
             }

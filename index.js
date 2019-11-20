@@ -9,8 +9,8 @@ const conf = JSON.parse(confStr);
 
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "client/views"));
-app.set("userType", -1);
-app.set("userName", null);
+require("./router/controller/setDefaultOption.js").setDefaultOption(app, {name:"", type:-1});
+
 app.set("projectDir", "D:/ll/project/Salady/");
 app.set("secretKey", conf.secretKey);
 

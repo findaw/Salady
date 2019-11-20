@@ -20,7 +20,6 @@ const controller = require("./controller/controller.js");
 
 router.use(express.json());
 router.use((req,res,next)=>{
-    //console.log(req);
     next();
 });
 
@@ -28,6 +27,7 @@ router.use((req,res,next)=>{
 router.post("/check/join/:id", controller.checkJoin);
 
 router.post("/login/account", controller.loginAccount);
+router.post("/logout/account", controller.logoutAccount);
 
 router.post("/add/product", controller.addProduct);
 

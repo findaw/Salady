@@ -17,7 +17,7 @@
                     <a href="/"><img src="/img/Salady_logo.png" /></a>
                 </div>
                 <div>
-                    <form id="loginForm" action="/api/login/account" method="POST">
+                    <div id="loginForm">
                         <div>
                             <!--
                             <div class="radioWrap">
@@ -31,7 +31,7 @@
                                 </span>
                             </div>-->
                             <div class="inputWrap">
-                                <input type="text" id="idInput" name="id" placeholder="아이디" />
+                                <input type="text" id="idInput" name="id" placeholder="아이디" autocomplete="off" />
                             </div>
                             <div class="inputWrap">
                                 <input type="password" id="pwInput" name="pw" placeholder="비밀번호" />
@@ -45,10 +45,10 @@
                             <a href="#a" id="findAccountText">아이디/비밀번호 찾기</a>
                         </div>
                         <div>
-                            <button id="loginBtn" type="submit">로그인</button>
+                            <button id="loginBtn">로그인</button>
                         </div>
                         
-                    </form>
+                    </div>
 
                 </div>
                 <div id="joinLine">
