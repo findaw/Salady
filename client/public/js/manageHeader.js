@@ -8,5 +8,6 @@ mainList.forEach(item=>{
 const menuBtn = document.getElementById("menuBtn");
 menuBtn.addEventListener("click", ()=>{
     let menuLine = document.getElementById("menuLine");
+    console.log(menuLine);
     menuLine.classList.toggle("menuHidden");
 })

@@ -24,9 +24,9 @@ exports.joinSeller = (req ,res)=>{
             await conn.beginTransaction();
             await conn.query("INSERT INTO user (id,pw,name,type,join_date) VALUES(?,?,?,?,now())",[fields.id,fields.pw,fields.name, userType]);
             
-            let [row] = await conn.query("SELECT no FROM user ORDER BY id DESC LIMIT 1");
+            let [row] = await conn.query("SELECT no FROM user ORDER BY no DESC LIMIT 1");
             console.log(row[0].no);
-            await conn.query("INSERT INTO seller (no,sellerNo) VALUES(?,?)",[row[0].no, fields.sellerNo]);
+            await conn.query("INSERT INTO seller (no,seller_no) VALUES(?,?)",[row[0].no, fields.sellerNo]);
 
             await conn.commit();
 

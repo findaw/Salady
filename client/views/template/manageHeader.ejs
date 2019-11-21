@@ -5,7 +5,12 @@
         <div id="logoImgWrap">
             <a href="/"><img id="logoImg" src="img/Salady_logo.png" /></a>
         </div>
-        <a href="manage.html"><div id="headerText">관리페이지(판매자)</div></a>
+        <%if(type===2){%>
+            <a href="/manage"><div id="headerText">관리페이지(판매자)</div></a>
+        <%}else if(type===1){%>
+                <a href="/admin"><div id="headerText">관리자 페이지</div></a>
+        <%}%>
+        
     </div>
     <div id="headerListWrap">
         <ul id="headerList">
@@ -13,29 +18,13 @@
             <a href="#2"><li>리스트2</li></a>
         </ul>
     </div>      
-</div>      <!-- headerLine -->
+</div>      <!-- heade
+    rLine -->
+    <!-- side menu -->
+    <%if(type===2){%>
+        <%- include sellerManageSide.ejs %>
+    <%}else if(type===1){%>
+        <%- include adminManageSide.ejs %>
+    <%}%>
 
-<div id="menuLine" class="menuHidden">
-    <ul id="menuWrap">
-        <li class="mainList">상품관리</li>
-        <ul class="subList">
-            <a href="/view/productAdd" class="subListAnchor"><li>상품등록</li></a>
-            <a href="#a"  class="subListAnchor"><li>상품목록</li></a>
-        </ul>
-        <li class="mainList">주문관리</li>
-        <ul class="subList">
-            <a href="#a"  class="subListAnchor"><li>전체주문목록</li></a>
-            <a href="#a"  class="subListAnchor"><li>배송관리</li></a>
-            <a href="#a"  class="subListAnchor"><li>취소/교환/반품/환불</li></a>
-        </ul>
-        <li>고객관리</li>
-        <li class="mainList">게시판관리</li>
-        <ul class="subList">
-            <a href="#a"  class="subListAnchor"><li>게시판 설정</li></a>
-            <a href="#a"  class="subListAnchor"><li>게시물 관리</li></a>
-        </ul>
-        <li>프로모션</li>
-        <li>통계분석</li>
-        <li>기타</li>
-    </ul>
-</div>  <!-- menuLine -->
+<script type="text/javascript" src="/js/manageHeader.js"></script>

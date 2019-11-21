@@ -17,5 +17,5 @@ app.set("secretKey", conf.secretKey);
 app.use("/", router);
 
 app.listen(port, ()=>{
-    console.log("Listening on 4000 port");
+    console.log("Listening on " + port + " port");
 });

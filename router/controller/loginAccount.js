@@ -26,11 +26,12 @@ exports.loginAccount =  (req ,res)=>{
 
             //첫번째인자에 결과값이 있음
             let [rows] = await conn.query("SELECT * FROM user WHERE id=? AND pw=?",[fields.id, fields.pw]);
-            //console.log(rows[0]);
+            console.log(rows[0]);
             
             if(rows[0]){
                 let obj = rows[0];
-               // console.log(obj);
+                console.log("일치");
+                console.log(obj);
                 jwt.sign(
                     {
                         userId : obj.id,
@@ -57,7 +58,8 @@ exports.loginAccount =  (req ,res)=>{
                             });
 
                             res.status(250).json({
-                                "token" : token
+                                "token" : token,
+                                "isSuccess" : true,
                             });
                         }
                     }
@@ -66,7 +68,10 @@ exports.loginAccount =  (req ,res)=>{
                 
                 
             }else{
-                res.status(200).send("Failed...<script type='text/javascript'>alert('일치하지 않습니다.'); history.back();</script>");        
+                console.log("불일치");
+                res.status(250).json({
+                    "isSuccess" : false,
+                });
             }
             
         }catch(err){

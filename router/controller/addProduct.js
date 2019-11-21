@@ -26,6 +26,7 @@ exports.addProduct = (req,res)=>{
     form.uploadDir = path.join(req.app.get("projectDir") + "/tmp");
     form.multiples = true; 
     form.parse(req, async (err, fields, files)=>{
+        console.log("addProduct.js");
         console.log(fields);
         
         Object.keys(fields).forEach(key=>{

@@ -39,18 +39,22 @@ loginBtn.addEventListener("click", e=>{
         let data = await res.json();
         console.log(res);
         console.log(data);
+        if(data.isSuccess){
+            if(prdCheckBox1.checked){
+                setTokenCookie(data.token, 60);
+            }else{
+                setTokenCookie(data.token, -1);
+            }
 
-        if(prdCheckBox1.checked){
-            setTokenCookie(data.token, 60);
+            alert('완료되었습니다.'); 
+            location.href='/';
         }else{
-            setTokenCookie(data.token, -1);
+            alert('아이디 또는 비밀번호가 일치하지 않습니다.'); 
         }
 
-        alert('완료되었습니다.'); 
-        location.href='/';
 
     }).catch(err=>{
-        console.log(err);
+        console.err(err);
     })
 
 });

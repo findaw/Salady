@@ -23,13 +23,17 @@ router.use((req,res,next)=>{
     next();
 });
 
+/*
+    /api/
+*/
+
+router.use("/add", require("./api/addRouter.js"));
+router.use("/modify", require("./api/modifyRouter.js"));
 
 router.post("/check/join/:id", controller.checkJoin);
 
 router.post("/login/account", controller.loginAccount);
 router.post("/logout/account", controller.logoutAccount);
-
-router.post("/add/product", controller.addProduct);
 
 router.post("/join/member", controller.joinMember);
 router.post("/join/seller", controller.joinSeller);

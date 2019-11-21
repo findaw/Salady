@@ -74,6 +74,9 @@ class JoinForm{
             this.isIdChecked = false;
             this.isIdExist = null;
         });
+        this.idInput.addEventListener("keyup", e=>{
+            this.idInputMsg.innerText = "아이디 중복검사를 해주세요.";    
+        })
         this.pwInput.addEventListener("keyup", ()=>{
             if(this.pwChkInput.value !== "" && this.pwInput.value !== this.pwChkInput.value){
                 this.pwChkInputMsg.innerText = "※비밀번호가 일치하지 않습니다.";

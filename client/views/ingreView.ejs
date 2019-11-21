@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/css/manageHeader.css" />
+    <link rel="stylesheet" href="/css/ingreView.css" />
+    <title>관리자 페이지</title>
+    
+</head>
+<body>
+
+   <%- include template/manageHeader.ejs %>
+
+
+    <div id="contentContainer">
+        <div id="HeadLine">
+            <div id="HeadTitle">성분 관리</div>
+        </div>
+
+        <div id="content">
+            <table id="ingreTable">
+                <thead>
+                    <tr>
+                        <th>명칭</th>
+                        <th>영어 명칭</th>
+                        <th>기본기능</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% if(data != null) {
+                        for (let i = 0; i < data.length; i++){%>
+                            <tr>
+                                <td><input class="name" type="text" value="<%- data[i]['name'] %>" disabled data-id="<%- data[i]['id'] %>"><div class="BtnWrap"><button class="modifyBtn">입력</button><button class="saveBtn">저장</button></div></td>
+                                <td ><input class="engName" type="text" value="<%- data[i]['eng_name'] %>" disabled  data-id="<%- data[i]['id'] %>"><div class="BtnWrap"><button class="modifyBtn">입력</button><button class="saveBtn" >저장</button></div></td>
+                                <td ><textarea class="desc" maxlength="150" placeholder="150자 이내로 작성" disabled  data-id="<%- data[i]['id'] %>"><%- data[i]['description'] %></textarea><div class="BtnWrap"><button class="modifyBtn">입력</button><button class="saveBtn">저장</button></div></td>
+                            </tr>
+                        <%}
+                    }%>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script type="text/javascript" src="/js/ingreView.js"></script>
+
+</body>
+</html>

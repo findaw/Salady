@@ -7,10 +7,13 @@
             <%}%>
         </div>
         <ul>
+
             <%if(type === 3){%>
                 <li><a href="/view/member"><img class="userBtnImg" src="/img/user.png" />마이페이지</a></li>
             <%}else if(type===2){%>
                 <li><a href="/view/manage"><img class="userBtnImg" src="/img/setting.png" />관리페이지</a></li>
+            <%}else if(type===1){%>
+                <li><a href="/admin"><img class="userBtnImg" src="/img/setting.png" />관리자 페이지</a></li>
             <%}else{%>
                 <li><a href="/view/login"><img class="userBtnImg" src="/img/userplus.png" />로그인/회원가입</a></li>
             <%}%>
