@@ -13,7 +13,7 @@ const pool = mysql.createPool({
 });
 
 
-exports.getIngreList = async ()=>{
+module.exports  = async ()=>{
     let conn = null;
 
     try{

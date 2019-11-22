@@ -12,7 +12,7 @@ const pool = mysql.createPool({
     waitForConnections:false,
 });
 
-exports.joinSeller = (req ,res)=>{
+module.exports  = (req ,res)=>{
     let userType = 2;
     let form = formidable.IncomingForm();
 

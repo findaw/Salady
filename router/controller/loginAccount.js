@@ -14,7 +14,7 @@ const pool = mysql.createPool({
     waitForConnections:false,
 });
 
-exports.loginAccount =  (req ,res)=>{
+module.exports  =  (req ,res)=>{
     
     let form = formidable.IncomingForm();
     form.parse(req, async (err, fields)=>{
@@ -31,14 +31,13 @@ exports.loginAccount =  (req ,res)=>{
             if(rows[0]){
                 let obj = rows[0];
                 console.log("일치");
-                console.log(obj);
                 jwt.sign(
                     {
                         userId : obj.id,
                         userName : obj.name,
                         userType : obj.type
                     },
-                    req.app.get("secretKey"),
+                    req.app.get("jwtSecret"),
                     {
                         issuer : "salady",
                         expiresIn : "1d",
@@ -50,15 +49,18 @@ exports.loginAccount =  (req ,res)=>{
                         }
                         else {
                             console.log(token);
-                            
-                            req.app.set("userToken", token);
-                            require("./setDefaultOption.js").setDefaultOption(req.app, {
-                                name : obj.name,
-                                type : obj.type,
-                            });
 
+                            req.app.set("userToken", token);
+                    
+                            res.locals.name = obj.name;
+                            res.locals.type = obj.type;
+                            
+                            res.cookie("token", token, {
+                                expires: new Date(Date.now() + 24*60*60*1000), 
+                                httpOnly: true,
+                                signed : true,  
+                            });
                             res.status(250).json({
-                                "token" : token,
                                 "isSuccess" : true,
                             });
                         }
@@ -69,6 +71,7 @@ exports.loginAccount =  (req ,res)=>{
                 
             }else{
                 console.log("불일치");
+                
                 res.status(250).json({
                     "isSuccess" : false,
                 });

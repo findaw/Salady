@@ -13,7 +13,7 @@ const pool = mysql.createPool({
 });
 
 
-exports.modifyIngre = async (req, res)=>{
+module.exports  = async (req, res)=>{
 
     console.log(req.body);
     let conn = null;

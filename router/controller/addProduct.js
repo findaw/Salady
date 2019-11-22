@@ -16,7 +16,7 @@ const pool = mysql.createPool({
 });
 
 
-exports.addProduct = (req,res)=>{
+ module.exports = (req,res)=>{
     let imgSrc = "";
     let thumbSrc = "";
     let imgsSrc = "";
@@ -94,7 +94,7 @@ exports.addProduct = (req,res)=>{
             ,[row[0].id, fields.volume, fields.volumeUnit, fields.takeDate, fields.takeDateUnit, fields.allergy, fields.guide, fields.take, promoSrc, imgsSrc]);
             console.log(result);
 
-            await conn.commit();
+            await conn.rollback();
             res.status(200).send("Success..<script type='text/javascript'>alert('등록되었습니다.');location.href='/view/manage'</script>");
         }catch(err){
             console.log(err);

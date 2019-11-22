@@ -1,27 +1,13 @@
 const express = require("express");
 const router = express.Router();
 const path = require("path");
+const jwt = require("jsonwebtoken");
 
-router.use(express.static("client/public"));
-
-router.use((req,res,next)=>{
-    console.log("router.js 1");
-    console.log(req.headers["x-access-token"]);
-
-
-
-
-
-    next();
-});
+//토큰 검증
+router.use(require("./controller/checkToken.js"));
 
 router.get("/", (req, res)=>{
-    console.log({
-        ...req.app.get("defaultOption"),
-    });
-    res.status(200).render("home",{
-        ...req.app.get("defaultOption"),
-    });
+    res.status(200).render("home",{});
 });
 
 
@@ -35,7 +21,7 @@ router.use((req, res, next)=>{
 })
 router.use((err, req, res, next)=>{
     console.log(err.stack);
-    res.status(500).render("error",{...req.app.get("defaultOption")});
+    res.status(500).render("error",{});
     
 });
 

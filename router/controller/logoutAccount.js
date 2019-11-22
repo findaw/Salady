@@ -1,9 +1,7 @@
-exports.logoutAccount = (req,res)=>{
-    let token = req.headers["x-access-token"];
+module.exports  = (req,res)=>{
     
-    if (token === req.app.get("userToken")){
-        console.log(token);
-        require("./setDefaultOption.js").setDefaultOption(req.app, {name:"", type:-1});
+    if (req.signedCookies.token === req.app.get("userToken")){
+        res.clearCookie("token");
 
         res.status(200).json({isSuccess:true});        
     }else{

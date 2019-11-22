@@ -13,7 +13,7 @@ const pool = mysql.createPool({
     waitForConnections:false,
 });
 
-exports.joinMember = (req ,res)=>{
+module.exports  = (req ,res)=>{
     let userType = 3;
     let form = formidable.IncomingForm();
 

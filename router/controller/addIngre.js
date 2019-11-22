@@ -14,7 +14,7 @@ const pool = mysql.createPool({
     waitForConnections:false,
 });
 
-exports.addIngre = (req, res) =>{
+module.exports  = (req, res) =>{
     let form = formidable.IncomingForm();
 
     form.parse(req, async (err, fields, files)=>{

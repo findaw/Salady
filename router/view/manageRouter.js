@@ -8,10 +8,10 @@ const path = require("path");
 */
 
 router.get("/", (req, res)=>{
-    res.status(200).render("manage",{...req.app.get("defaultOption")});
+    res.status(200).render("manage",{});
 });
 router.get("/productAdd", (req, res)=>{
-    res.status(200).render("productAdd",{...req.app.get("defaultOption")});
+    res.status(200).render("productAdd",{});
 });
 
 module.exports = router;

@@ -12,7 +12,7 @@ const pool = mysql.createPool({
     waitForConnections:false,
 });
 
-exports.checkJoin = async(req,res)=>{
+module.exports  = async(req,res)=>{
     let conn = null;
     try{
         conn = await pool.getConnection();

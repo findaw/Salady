@@ -1,8 +1,7 @@
 
-exports.setDefaultOption = (app, options)=>{
+module.exports  = (app, options)=>{
     options = {name : "", type : -1, ...options};
     console.log("setDefaultOption.js");
-    console.log(options);
     app.set("userName", options.name);
     app.set("userType", options.type);
 

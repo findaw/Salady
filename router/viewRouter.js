@@ -2,9 +2,6 @@ const express = require("express");
 const router = express.Router();
 const path = require("path");
 
-
-router.use(express.static("client/public"));
-
 /*
     /view/
 */
@@ -18,20 +15,20 @@ router.get("/login", (req, res)=>{
 });
 
 router.get("/welcome", (req, res)=>{
-    res.status(200).render("welcome",{...req.app.get("defaultOption")});
+    res.status(200).render("welcome",{});
 });
 router.get("/product", (req, res)=>{
-    res.status(200).render("product",{...req.app.get("defaultOption")});
+    res.status(200).render("product",{});
 });
 
 router.get("/productDetail", (req, res)=>{
-    res.status(200).render("productDetail",{...req.app.get("defaultOption")});
+    res.status(200).render("productDetail",{});
 });
 router.get("/shoppingCart", (req, res)=>{
-    res.status(200).render("shoppingCart",{...req.app.get("defaultOption")});
+    res.status(200).render("shoppingCart",{});
 });
 router.get("/member", (req, res)=>{
-    res.status(200).render("member",{...req.app.get("defaultOption")});
+    res.status(200).render("member",{});
 });
 
 module.exports = router;

@@ -6,9 +6,7 @@ const router = express.Router();
 */
 
 
-const controller = require("../controller/controller.js");
-
-router.post("/product", controller.addProduct);
-router.post("/ingredient", controller.addIngre);
+router.post("/product", require("../controller/addProduct.js"));
+router.post("/ingredient", require("../controller/addIngre.js"));
 
 module.exports = router;

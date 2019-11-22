@@ -8,13 +8,13 @@ const path = require("path");
 */
 
 router.get("/", (req, res)=>{
-    res.status(200).render("joinType",{...req.app.get("defaultOption")});
+    res.status(200).render("joinType",{});
 });
 router.get("/member", (req, res)=>{
-    res.status(200).render("joinMember",{...req.app.get("defaultOption")});
+    res.status(200).render("joinMember",{});
 });
 router.get("/seller", (req, res)=>{
-    res.status(200).render("joinSeller",{...req.app.get("defaultOption")});
+    res.status(200).render("joinSeller",{});
 });
 
 
