@@ -32,9 +32,10 @@
                         <div class="optionLine">
                             <div class="optionLineTitle">제품종류</div>
                             <ul class="optionListWrap">
-                                <li>칼슘</li><li class="optionCheck">클로렐라</li><li>밀크씨슬</li>
-                                <li class="optionCheck">멀티비타민</li><li class="optionCheck">비타민</li><li>다이어트식품</li><li>유산균</li>
-                                <li>홍삼</li><li>루테인</li><li>프로바이오틱스</li>
+                                <%for(item of ingre){%>
+                                    <li data-eng-name="<%-item['engName']%>"><%- item['name']%></li>
+                                <%} %>
+                                <li class="optionCheck">클로렐라</li>
                             </ul>        
                         </div>
                         <div class="optionLine">
@@ -53,10 +54,38 @@
             </div>   <!-- itemOptionContainer  -->
 
             <div id="itemList">
+
+                <%if(prd !== null){
+                    for(let i=0; i < prd.length; i++){ %>
+                        <div class="listItem">
+                            <a href="#item">
+                                <div class="itemWrap">
+                                    <div class="itemImgWrap">
+                                        <img class="itemImg" src="/img/upload/img/<%- prd[i]['img_src']%>" />
+                                    </div>
+                                    <div class="itemCateLine">
+                                    <%for(let ingre of prd[i]['ingreList']){ %>
+                                        <span class="<%-ingre['engName']%>"><%- ingre['name'] %></span>
+                                    <%}%>
+                                    </div>
+                                    <div class="itemTitle"><span class="itemBrand">[<%-prd[i]['seller'] %>]</span><%-prd[i]['name'] %></div>
+                                    <div class="itemPriceLine itemPrice"><%-prd[i]['price'] %> 원</div>
+                                    <div class="itemText"><%-prd[i]['description'] %></div>
+                                    <div class="itemTagLine">
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        
+
+                    <%}
+                }%>
                 <div class="listItem">
                     <a href="#item">
                         <div class="itemWrap">
-                            <img class="itemImg" src="https://via.placeholder.com/400" />
+                            <div class="itemImgWrap">
+                                <img class="itemImg" src="https://via.placeholder.com/400" />
+                            </div>
                             <div class="itemCateLine"><span class="typeCalcium">칼슘</span><span class="typeVitamin">비타민</span></div>
                             <div class="itemTitle"><span class="itemBrand">[브랜드 이름]</span>기본상품 이름길면넘어가</div>
                             <div class="itemPriceLine itemPrice">22,800</div>
@@ -70,7 +99,9 @@
                 <div class="listItem">
                     <a href="#item">
                         <div class="itemWrap">
-                            <img class="itemImg" src="https://via.placeholder.com/400" />
+                            <div class="itemImgWrap">
+                                <img class="itemImg" src="https://via.placeholder.com/400" />
+                            </div>
                             <div class="itemCateLine"><span class="typeCalcium">칼슘</span></div>
                             <div class="itemTitle"><span class="itemBrand">[브랜드 이름]</span>세일 제품이름</div>
                             <div class="itemPriceLine"><span class="itemOrgPrice">60,000</span><span  class="itemPriceArrow">→</span><span class="itemSalePrice itemPrice">45,000</span></div>
@@ -85,7 +116,9 @@
                 <div class="listItem">
                     <a href="#item">
                         <div class="itemWrap">
-                            <img class="itemImg" src="https://via.placeholder.com/400" />
+                            <div class="itemImgWrap">
+                                <img class="itemImg" src="https://via.placeholder.com/400" />
+                            </div>
                             <div class="itemCateLine"><span class="typeCalcium">칼슘</span><span class="typeChlorella">클로렐라</span><span class="typeMilkThistle">밀크씨슬</span><span class="typeDietFood">다이어트식품</span></div>
                             <div class="itemTitle"><span class="itemBrand">[브랜드 이름]</span>이벤트 제품이름</div>
                             <div class="itemPriceLine itemPrice">33,700</div>
@@ -103,7 +136,9 @@
                 <div class="listItem">
                         <a href="#item">
                         <div class="itemWrap">
-                            <img class="itemImg" src="https://via.placeholder.com/400" />
+                            <div class="itemImgWrap">
+                                <img class="itemImg" src="https://via.placeholder.com/400" />
+                            </div>
                             <div class="itemCateLine"><span class="typeLacto">유산균</span></div>
                             <div class="itemTitle"><span class="itemBrand">[브랜드 이름]</span>맞춤 제품이름</div>
                             <div class="itemPriceLine itemPrice">46,500</div>
@@ -118,7 +153,9 @@
                 <div class="listItem">
                     <a href="#item">
                         <div class="itemWrap">
-                            <img class="itemImg" src="https://via.placeholder.com/400" />
+                            <div class="itemImgWrap">
+                                <img class="itemImg" src="https://via.placeholder.com/400" />
+                            </div>
                             <div class="itemCateLine"><span class="typeChlorella">클로렐라</span><span class="typeRedGinseng">홍삼</span></div>
                             <div class="itemTitle"><span class="itemBrand">[브랜드 이름]</span>광고 제품이름</div>
                             <div class="itemPriceLine itemPrice">27,000</div>
@@ -135,7 +172,9 @@
                 <div class="listItem">
                     <a href="#item">
                         <div class="itemWrap">
-                            <img class="itemImg" src="https://via.placeholder.com/400" />
+                            <div class="itemImgWrap">
+                                <img class="itemImg" src="https://via.placeholder.com/400" />
+                            </div>
                             <div class="itemCateLine"><span class="typeLutein">루테인</span></div>
                             <div class="itemTitle"><span class="itemBrand">[브랜드 이름]</span>인기 제품이름</div>
                             <div class="itemPriceLine itemPrice">24,900</div>
@@ -151,7 +190,9 @@
                 <div class="listItem">
                         <a href="#item">
                         <div class="itemWrap">
-                            <img class="itemImg" src="https://via.placeholder.com/400" />
+                            <div class="itemImgWrap">
+                                <img class="itemImg" src="https://via.placeholder.com/400" />
+                            </div>
                             <div class="itemCateLine"><span class="typeMilkThistle">밀크씨슬</span><span class="typeDietFood">다이어트식품</span></div>
                             <div class="itemTitle"><span class="itemBrand">[브랜드 이름]</span>추천 제품이름</div>
                             <div class="itemPriceLine itemPrice">35,700</div>
@@ -166,7 +207,9 @@
                 <div class="listItem">
                     <a href="#item">
                         <div class="itemWrap">
-                            <img class="itemImg" src="https://via.placeholder.com/400" />
+                            <div class="itemImgWrap">
+                                <img class="itemImg" src="https://via.placeholder.com/400" />
+                            </div>
                             <div class="itemCateLine"><span class="typeProbiotics">프로바이오틱스</span></div>
                             <div class="itemTitle"><span class="itemBrand">[브랜드 이름]</span>브랜드 제품이름</div>
                             <div class="itemPriceLine itemPrice">32,800</div>

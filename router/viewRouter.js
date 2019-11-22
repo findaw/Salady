@@ -17,8 +17,11 @@ router.get("/login", (req, res)=>{
 router.get("/welcome", (req, res)=>{
     res.status(200).render("welcome",{});
 });
-router.get("/product", (req, res)=>{
-    res.status(200).render("product",{});
+router.get("/product", async (req, res)=>{
+    const {product, ingredient} = await require("./controller/getPrdIngre.js")();
+    console.log(product);
+    console.log(ingredient);
+    res.status(200).render("product",{prd: product, ingre : ingredient});
 });
 
 router.get("/productDetail", (req, res)=>{

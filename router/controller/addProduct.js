@@ -31,11 +31,11 @@ const makeImgName = require("./makeImgName.js");
 
                     if(file.size > 0){
                         let fileName = makeImgName(file.name, req.app.get("imgNameLength"));
-                        let filePath = path.join(req.app.get("projectDir") + "/upload/img/" + fileName);
+                        let filePath = path.join(req.app.get("projectDir") + "/client/public/img/upload/img/" + fileName);
                         console.log(fileName);
 
                         fs.renameSync(file.path, filePath);
-                        sharp(filePath).resize(150).toFile(path.join(req.app.get("projectDir") + "/upload/img/thumb/" + "150_" + fileName)).catch(err=>{console.log(err)});
+                        sharp(filePath).resize(150).toFile(path.join(req.app.get("projectDir") + "/client/public/img/upload/img/thumb/" + "150_" + fileName)).catch(err=>{console.log(err)});
 
                         
                         imgsSrc += fileName + ">>>";
@@ -53,10 +53,10 @@ const makeImgName = require("./makeImgName.js");
                 if(files[key].size > 0){
                     console.log(key);
                     let fileName = makeImgName(files[key].name, req.app.get("imgNameLength"));
-                    let filePath = path.join(req.app.get("projectDir") + "/upload/img/" + fileName);
+                    let filePath = path.join(req.app.get("projectDir") + "/client/public/img/upload/img/" + fileName);
 
                     fs.renameSync(files[key].path, filePath);
-                    sharp(filePath).resize(150).toFile(path.join(req.app.get("projectDir") + "/upload/img/thumb/" + "150_" + fileName)).catch(err=>{console.log(err)});
+                    sharp(filePath).resize(150).toFile(path.join(req.app.get("projectDir") + "/client/public/img/upload/img/thumb/" + "150_" + fileName)).catch(err=>{console.log(err)});
                     
                     if(key=="promoImg"){
                         promoSrc = fileName;
