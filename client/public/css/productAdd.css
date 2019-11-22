@@ -32,3 +32,7 @@
 #submitBtn{
     margin :80px; padding : 10px 40px; font-size:20px; background-color:#008b2a; color:white; border:none; cursor:pointer;
 }
+@media (max-width:900px){
+    #contentContainer {padding :0px;}
+    #paTable{ width:95%;}
+}

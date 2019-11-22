@@ -19,6 +19,7 @@ module.exports  =  (req ,res)=>{
     let form = formidable.IncomingForm();
     form.parse(req, async (err, fields)=>{
         console.log(fields);
+
         let conn = null;
         try{
             conn = await pool.getConnection();
@@ -33,6 +34,7 @@ module.exports  =  (req ,res)=>{
                 console.log("일치");
                 jwt.sign(
                     {
+                        userNo : obj.no,
                         userId : obj.id,
                         userName : obj.name,
                         userType : obj.type
@@ -54,12 +56,22 @@ module.exports  =  (req ,res)=>{
                     
                             res.locals.name = obj.name;
                             res.locals.type = obj.type;
-                            
-                            res.cookie("token", token, {
-                                expires: new Date(Date.now() + 24*60*60*1000), 
-                                httpOnly: true,
-                                signed : true,  
-                            });
+                            console.log(fields.isChecked);
+
+                            if(fields.isChecked === 'true'){
+                                res.cookie("token", token, {
+                                    expires: new Date(Date.now() + 24*60*60*1000 * 60), 
+                                    httpOnly: true,
+                                    signed : true,  
+                                });
+                            }else{
+                                console.log("ㅇㅇ");
+                                res.cookie("token", token, {
+                                    httpOnly: true,
+                                    signed : true,  
+                                });
+                            }
+                           
                             res.status(250).json({
                                 "isSuccess" : true,
                             });

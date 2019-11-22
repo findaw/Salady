@@ -1,18 +1,4 @@
-
 const formidable  = require("formidable");
-const mysql = require("mysql2/promise");
-const fs = require("fs");
-const path = require("path");
-const dbConfStr = fs.readFileSync("./database.json");
-const dbConf = JSON.parse(dbConfStr);
-const pool = mysql.createPool({
-    host : dbConf.host,
-    user : dbConf.user,
-    password : dbConf.password,
-    database : dbConf.database,
-    connectionLimit:20,
-    waitForConnections:false,
-});
 
 module.exports  = (req, res) =>{
     let form = formidable.IncomingForm();
@@ -21,10 +7,11 @@ module.exports  = (req, res) =>{
         console.log(fields);
 
         
-        let conn = await pool.getConnection();
+        let conn = null
 
 
         try{
+            conn = await require("./connetDB.js")();
             await conn.beginTransaction();
             let result = await conn.query("INSERT INTO ingredient(name, eng_name, description) VALUES(?,?,?)"
             ,[fields.name, fields.engName, fields.desc]);

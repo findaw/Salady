@@ -1,25 +1,9 @@
 
-const mysql = require("mysql2/promise");
-const fs = require("fs");
-const dbConfStr = fs.readFileSync("./database.json");
-const dbConf = JSON.parse(dbConfStr);
-const pool = mysql.createPool({
-    host : dbConf.host,
-    user : dbConf.user,
-    password : dbConf.password,
-    database : dbConf.database,
-    connectionLimit:20,
-    waitForConnections:false,
-});
-
-
 module.exports  = async ()=>{
     let conn = null;
-
-    try{
-        conn = await pool.getConnection();
+    try{    
+        conn = await require("./connetDB.js")();
         let [rows] = await conn.query("SELECT * FROM ingredient");
-        
         return rows;    
     }catch(err){
         console.log(err.stack);

@@ -1,17 +1,4 @@
 
-const mysql = require("mysql2/promise");
-const fs = require("fs");
-const dbConfStr = fs.readFileSync("./database.json");
-const dbConf = JSON.parse(dbConfStr);
-const pool = mysql.createPool({
-    host : dbConf.host,
-    user : dbConf.user,
-    password : dbConf.password,
-    database : dbConf.database,
-    connectionLimit:20,
-    waitForConnections:false,
-});
-
 
 module.exports  = async (req, res)=>{
 
@@ -20,7 +7,7 @@ module.exports  = async (req, res)=>{
     let data = req.body;
 
     try{
-        conn = await pool.getConnection();
+        conn = await require("./connetDB.js")();
         await conn.beginTransaction();
         let col = "";
         if(data.key === "desc"){

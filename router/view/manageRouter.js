@@ -1,6 +1,5 @@
 const express = require("express");
 const router = express.Router();
-const path = require("path");
 
 
 /*
@@ -10,8 +9,13 @@ const path = require("path");
 router.get("/", (req, res)=>{
     res.status(200).render("manage",{});
 });
-router.get("/productAdd", (req, res)=>{
-    res.status(200).render("productAdd",{});
+router.get("/productAdd", async (req, res)=>{
+    const rows = await require("../controller/getIngreList.js")();
+    data = rows.map(item=>{
+        return {"id" : item.id, "name" : item.name}
+    });
+    console.log(data);
+    res.status(200).render("productAdd",{data:data});
 });
 
 module.exports = router;

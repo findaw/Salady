@@ -18,7 +18,7 @@ loginBtn.addEventListener("click", e=>{
         let formData = new FormData();
         formData.append("id", idInput.value);
         formData.append("pw", pwInput.value);
-        formData.append("isChecked", prdCheckBox1.checked)
+        formData.append("isChecked", prdCheckBox1.checked);
         
         fetch("/api/login/account", {
             method : "POST",

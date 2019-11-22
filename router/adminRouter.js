@@ -11,16 +11,15 @@ router.use(express.static("client/public"));
 */
 
 router.get("/", (req, res)=>{
-    res.status(200).render("admin",{...req.app.get("defaultOption")});
+    res.status(200).render("admin",{});
 });
 router.get("/ingredientAdd", (req, res)=>{
-    res.status(200).render("ingreAdd",{...req.app.get("defaultOption")});
+    res.status(200).render("ingreAdd",{});
 });
 router.get("/ingredientView", async (req, res)=>{
-    let data = await require("./controller/getIngreList").getIngreList();
+    let data = await require("./controller/getIngreList.js")();
     console.log(data);
-    res.status(200).render("ingreView",{...req.app.get("defaultOption"),
-        data: data});
+    res.status(200).render("ingreView",{data: data});
 });
 
 

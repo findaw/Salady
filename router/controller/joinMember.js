@@ -1,17 +1,5 @@
 
 const formidable  = require("formidable");
-const mysql = require("mysql2/promise");
-const fs = require("fs");
-const dbConfStr = fs.readFileSync("./database.json");
-const dbConf = JSON.parse(dbConfStr);
-const pool = mysql.createPool({
-    host : dbConf.host,
-    user : dbConf.user,
-    password : dbConf.password,
-    database : dbConf.database,
-    connectionLimit:20,
-    waitForConnections:false,
-});
 
 module.exports  = (req ,res)=>{
     let userType = 3;
@@ -21,7 +9,7 @@ module.exports  = (req ,res)=>{
         console.log(fields);
         let conn = null;
         try{
-            conn = await pool.getConnection();
+            conn = await require("./connetDB.js")();
             await conn.beginTransaction();
             await conn.query("INSERT INTO user (id,pw,name,type,join_date) VALUES(?,?,?,?,now())",[fields.id,fields.pw,fields.name, userType]);
             

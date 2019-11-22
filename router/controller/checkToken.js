@@ -2,7 +2,7 @@
 const jwt = require("jsonwebtoken");
 
 module.exports  = (req,res,next)=>{
-    console.log("router.js 1");
+    console.log("checkToken()");
     console.log(req.signedCookies);
     if(req.signedCookies.token){
         let token = req.signedCookies.token;
@@ -13,19 +13,21 @@ module.exports  = (req,res,next)=>{
                 res.clearCookie("token");
                 throw Error("JWT Token Error : " + token);
 
-            }else if(req.app.get("userToken") === null ){
+            }else{
                 console.log(decoded);
-                req.app.set("userToken", token);
+                res.locals.name = decoded.userName;
+                res.locals.type = decoded.userType;
+                res.locals.userNo = decoded.userNo;
+                res.locals.userId = decoded.userId;
             }
-            res.locals.name = decoded.userName;
-            res.locals.type = decoded.userType;
             
+            next();
         });
     }else{
         res.locals.name = "";
         res.locals.type = -1;
+        
+        next();
     }
 
-
-    next();
 }
