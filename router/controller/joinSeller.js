@@ -1,18 +1,6 @@
 const formidable  = require("formidable");
-const mysql = require("mysql2/promise");
-const fs = require("fs");
-const dbConfStr = fs.readFileSync("./database.json");
-const dbConf = JSON.parse(dbConfStr);
-const pool = mysql.createPool({
-    host : dbConf.host,
-    user : dbConf.user,
-    password : dbConf.password,
-    database : dbConf.database,
-    connectionLimit:20,
-    waitForConnections:false,
-});
 
-exports.joinSeller = (req ,res)=>{
+module.exports  = (req ,res)=>{
     let userType = 2;
     let form = formidable.IncomingForm();
 
@@ -20,13 +8,13 @@ exports.joinSeller = (req ,res)=>{
         console.log(fields);
         let conn = null;
         try{
-            conn = await pool.getConnection();
+            conn = await require("./connetDB.js")();
             await conn.beginTransaction();
             await conn.query("INSERT INTO user (id,pw,name,type,join_date) VALUES(?,?,?,?,now())",[fields.id,fields.pw,fields.name, userType]);
             
-            let [row] = await conn.query("SELECT no FROM user ORDER BY id DESC LIMIT 1");
+            let [row] = await conn.query("SELECT no FROM user ORDER BY no DESC LIMIT 1");
             console.log(row[0].no);
-            await conn.query("INSERT INTO seller (no,sellerNo) VALUES(?,?)",[row[0].no, fields.sellerNo]);
+            await conn.query("INSERT INTO seller (no,seller_no) VALUES(?,?)",[row[0].no, fields.sellerNo]);
 
             await conn.commit();
 

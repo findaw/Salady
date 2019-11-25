@@ -1,16 +1,4 @@
-body{
-    
-    background-color:#e7eef5;
-}
-#contentContainer{
-    padding : 40px;
-}
-#paHeadLine{
-    padding : 40px 60px; margin-bottom: 80px; border-bottom:1px solid #3862d4;
-}
-#paHeadTitle{
-    font-size : 28px; font-weight: bold;
-}
+
 #paForm{
     display:flex; align-items: center; flex-direction: column;
 }
@@ -43,4 +31,8 @@ body{
 }
 #submitBtn{
     margin :80px; padding : 10px 40px; font-size:20px; background-color:#008b2a; color:white; border:none; cursor:pointer;
+}
+@media (max-width:900px){
+    #contentContainer {padding :0px;}
+    #paTable{ width:95%;}
 }

@@ -8,9 +8,10 @@ ul{
     margin : 0px;
     padding : 0px;
 }
-
-body{margin:62px 0 0 0;}
-
+body{
+    margin:62px 0 0 0;
+    background-color:#e7eef5;
+}
 
 /* header Line */ 
 #headerLine{
@@ -84,4 +85,17 @@ body{margin:62px 0 0 0;}
 }
 .subListAnchor li:hover{
     background-color:#5a5a5a; color:white;
+}
+
+/* body Line */
+
+#contentContainer{
+    padding : 40px;
+}
+
+#HeadLine{
+    padding : 40px 60px; margin-bottom: 80px; border-bottom:1px solid #3862d4;
+}
+#HeadTitle{
+    font-size : 28px; font-weight: bold;
 }

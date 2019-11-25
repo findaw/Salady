@@ -1,21 +1,9 @@
-const formidable  = require("formidable");
-const mysql = require("mysql2/promise");
-const fs = require("fs");
-const dbConfStr = fs.readFileSync("./database.json");
-const dbConf = JSON.parse(dbConfStr);
-const pool = mysql.createPool({
-    host : dbConf.host,
-    user : dbConf.user,
-    password : dbConf.password,
-    database : dbConf.database,
-    connectionLimit:20,
-    waitForConnections:false,
-});
 
-exports.checkJoin = async(req,res)=>{
+
+module.exports  = async(req,res)=>{
     let conn = null;
     try{
-        conn = await pool.getConnection();
+        conn = await require("./connetDB.js")();
         let [row] = await conn.query("SELECT id FROM user WHERE id=?",[req.params.id]);
         console.log(row[0]);
         //no result => undefined 

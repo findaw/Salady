@@ -1,0 +1,38 @@
+#content{
+    padding : 0px 20px;  max-height: 650px; overflow:auto;
+}
+#ingreTable{
+    width:100%; max-width:1300px; margin:auto; border: 1px solid #cccccc; background-color:white;
+}
+th,td{
+    border-bottom: 1px solid #cccccc;
+}
+th{
+    padding : 30px;
+}
+td{
+    text-align: center; padding : 20px;
+}
+input[type='text']{
+    height : 30px; padding : 5px; 
+}
+.name{
+}
+.engName{
+}
+
+td textarea{
+    width : 400px; height : 50px; padding:10px;
+}
+.BtnWrap{
+    margin : 5px;
+}
+.BtnWrap button{
+    margin : 5px 10px; padding : 5px 10px; cursor:pointer;
+}
+.modifyBtn{
+    background-color:#d48b36; color:white; border:none;
+}
+.saveBtn{
+    background-color:#05863f; color:white; border:none; display:none;
+}

@@ -13,9 +13,38 @@ ul{
 .line{}
 .wrap{}
 
+
+/* top fixed line */
+#topFixedLine{
+    position:fixed; display:flex; width:100%; top:0px; padding : 15px; background-color: white;  z-index:1;
+    box-shadow:0px 0px 10px 0px #555555;  height:20px;
+}
+
+#userBtnsWrap{
+    display:flex; position:absolute; right:30px;
+}
+#welcomeMsg{
+    margin-right : 40px;
+}
+#userBtnsWrap ul li a{
+    color:#7e7e7e;
+}
+.userBtnImg{
+    width : 15px; margin : 0 5px 0 0;
+}
+#userBtnsWrap ul li{
+    float:left; margin-right : 20px; width : fit-content; 
+    
+}
+
+@media (max-width : 600px){
+    #welcomeMsg{ display:none; }
+}
+
+
 /* Header Line */
 #headerLine{
-    border-bottom : 2px solid rgb(165, 77, 182);  
+    border-bottom : 2px solid rgb(165, 77, 182);   margin-top:60px;
     display:flex; justify-content:center;
 }
 #headerWrap{
@@ -53,19 +82,8 @@ ul{
 #searchBar:focus{
     outline:none;
 }
-#userBtnsWrap{
-    margin : 10px;
-}
-#userBtnsWrap ul li a{
-    color:#7e7e7e;
-}
-.userBtnImg{
-    width : 15px; margin : 0 5px 0 0;
-}
-#userBtnsWrap ul li{
-    float:left; padding : 5px; margin-right : 10px; width : fit-content; 
-    
-}
+
+
 @media (max-width : 600px){
     #headWrap{flex-direction:column; text-align:center;} 
     #serachBarWrap{width: 85%; }

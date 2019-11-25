@@ -1,17 +1,19 @@
 const express = require("express");
 const router = express.Router();
 const path = require("path");
+const jwt = require("jsonwebtoken");
 
-router.use(express.static("client/public"));
+//토큰 검증
+router.use(require("./controller/checkToken.js"));
+
 router.get("/", (req, res)=>{
-    let name = req.app.get("userName");
-    res.status(200).render("home",{"type":req.app.get("userType"), "name":name});
+    res.status(200).render("home",{});
 });
+
 
 router.use("/view", require("./viewRouter.js"));
 router.use("/api", require("./apiRouter.js"));
-
-
+router.use("/admin", require("./adminRouter.js"));
 
 
 router.use((req, res, next)=>{
@@ -19,8 +21,11 @@ router.use((req, res, next)=>{
 })
 router.use((err, req, res, next)=>{
     console.log(err.stack);
-    res.status(500).render("error",{"type":"member"});
+    res.status(500).render("error",{});
     
 });
+
+
+
 
 module.exports = router;

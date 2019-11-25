@@ -98,7 +98,7 @@ class TypeItem{
         //가져와서 저장한 형태 
         this.typeItems = [
             { text:"비타민B", type:"vitaminB", isActive:false },
-            { text:"비타민C", type:"vitaminB", isActive:false },
+            { text:"비타민C", type:"vitaminC", isActive:false },
             { text:"칼슘", type:"vitaminB", isActive:false },
             { text:"공액리놀레산", type:"vitaminB", isActive:false },
             { text:"유산균", type:"vitaminB", isActive:false },

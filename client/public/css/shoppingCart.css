@@ -9,12 +9,12 @@ input[type="checkbox"] + label span {
     height: 24px;
     margin: -2px 10px 0 0;
     vertical-align: middle;
-    background: url(img/checkbox.svg) left top no-repeat;
+    background: url(/img/checkbox.svg) left top no-repeat;
     cursor: pointer;
     background-size: cover;
 }
 input[type="checkbox"]:checked + label span {
-    background:url(img/checkbox.svg)  -26px top no-repeat;
+    background:url(/img/checkbox.svg)  -26px top no-repeat;
     background-size: cover;
 }
 

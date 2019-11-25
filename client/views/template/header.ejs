@@ -1,3 +1,33 @@
+<div id="topFixedLine">
+
+    <div id="userBtnsWrap">
+        <div id="welcomeMsg">
+            <% if(name !== ""){%>
+                <b><%= name %> 님</b>
+            <%}%>
+        </div>
+        <ul>
+
+            <%if(type === 3){%>
+                <li><a href="/view/member"><img class="userBtnImg" src="/img/user.png" />마이페이지</a></li>
+            <%}else if(type===2){%>
+                <li><a href="/view/manage"><img class="userBtnImg" src="/img/setting.png" />관리페이지</a></li>
+            <%}else if(type===1){%>
+                <li><a href="/admin"><img class="userBtnImg" src="/img/setting.png" />관리자 페이지</a></li>
+            <%}else{%>
+                <li><a href="/view/login"><img class="userBtnImg" src="/img/userplus.png" />로그인/회원가입</a></li>
+            <%}%>
+
+            <li><a href="/view/shoppingCart"><img class="userBtnImg" src="/img/cart1.png" />장바구니</a></li>
+
+            <%if(type !== -1){ %>
+                <li id="logoutBtn"><a href="#annnn"><img class="userBtnImg" src="/img/lock.png" />로그아웃</a></li>
+            <%}%>
+            
+        </ul> 
+    </div>
+</div>
+
 <div id="headerLine">
     <div id="headerWrap">
         <div id="headLine" class="line">
@@ -9,19 +39,7 @@
                     <input id="searchBar" type="text" placeholder="검색할 내용" />
                     <img src="/img/search.png" />
                 </div>
-                <div id="userBtnsWrap">
-                    <ul>
-                        <%if(type === 3){%>
-                            <li><a href="/view/member"><img class="userBtnImg" src="/img/user.png" />마이페이지</a></li>
-                        <%}else if(type===2){%>
-                            <li><a href="/view/manage"><img class="userBtnImg" src="/img/user.png" />관리페이지</a></li>
-                        <%}else{%>
-                            <li><a href="/view/login"><img class="userBtnImg" src="/img/user.png" />로그인/회원가입</a></li>
-                        <%}%>
-                        <li><a href="/view/shoppingCart"><img class="userBtnImg" src="/img/login.png" />장바구니</a></li>
-                        <li><a href="/view/setting"><img class="userBtnImg" src="/img/setting.png" />설정</a></li>
-                    </ul> 
-                </div>
+
             </div>
         </div>  <!-- headLine -->
         
@@ -38,3 +56,5 @@
         </div>  <!-- cateLine -->
     </div>
 </div>      <!-- Header Line-->
+
+<script type="text/javascript" src="/js/header.js"></script>

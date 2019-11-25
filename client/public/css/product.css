@@ -54,8 +54,10 @@
 #itemList{display:flex; flex-wrap: wrap; justify-content:center;  }
 
 .listItem{ width : 300px; height : 600px; margin : 25px; }
+.itemWrap{width:100%;}
 .itemText{ font-size : 15px; margin:5px; }
-.itemImg{width : 100%; height:65%;}
+.itemImgWrap{ position:relative; width:100%; padding-bottom:100%; margin-bottom:20px;}
+.itemImg{position:absolute; width:100%; height:100%;}
 .itemBrand{padding-right:5px;}
 .itemTitle{ font-size : 22px; font-weight:550;}
 .itemPriceLine{ font-size : 17px; margin:5px;}

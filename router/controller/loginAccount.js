@@ -14,10 +14,12 @@ const pool = mysql.createPool({
     waitForConnections:false,
 });
 
-exports.loginAccount =  (req ,res)=>{
+module.exports  =  (req ,res)=>{
+    
     let form = formidable.IncomingForm();
     form.parse(req, async (err, fields)=>{
-        //console.log(fields);
+        console.log(fields);
+
         let conn = null;
         try{
             conn = await pool.getConnection();
@@ -25,18 +27,19 @@ exports.loginAccount =  (req ,res)=>{
 
             //첫번째인자에 결과값이 있음
             let [rows] = await conn.query("SELECT * FROM user WHERE id=? AND pw=?",[fields.id, fields.pw]);
-            //console.log(rows[0]);
+            console.log(rows[0]);
             
             if(rows[0]){
                 let obj = rows[0];
-               // console.log(obj);
+                console.log("일치");
                 jwt.sign(
                     {
+                        userNo : obj.no,
                         userId : obj.id,
                         userName : obj.name,
                         userType : obj.type
                     },
-                    req.app.get("secretKey"),
+                    req.app.get("jwtSecret"),
                     {
                         issuer : "salady",
                         expiresIn : "1d",
@@ -48,15 +51,42 @@ exports.loginAccount =  (req ,res)=>{
                         }
                         else {
                             console.log(token);
-                            req.app.set("userName", obj.name);
-                            req.app.set("userType", obj.type);
+
+                            req.app.set("userToken", token);
+                    
+                            res.locals.name = obj.name;
+                            res.locals.type = obj.type;
+                            console.log(fields.isChecked);
+
+                            if(fields.isChecked === 'true'){
+                                res.cookie("token", token, {
+                                    expires: new Date(Date.now() + 24*60*60*1000 * 60), 
+                                    httpOnly: true,
+                                    signed : true,  
+                                });
+                            }else{
+                                console.log("ㅇㅇ");
+                                res.cookie("token", token, {
+                                    httpOnly: true,
+                                    signed : true,  
+                                });
+                            }
+                           
+                            res.status(250).json({
+                                "isSuccess" : true,
+                            });
                         }
                     }
                 );
 
-                res.status(200).send("Success...<script type='text/javascript'>alert('완료되었습니다.'); location.href='/';</script>");
+                
+                
             }else{
-                res.status(200).send("Failed...<script type='text/javascript'>alert('일치하지 않습니다.'); history.back();</script>");        
+                console.log("불일치");
+                
+                res.status(250).json({
+                    "isSuccess" : false,
+                });
             }
             
         }catch(err){

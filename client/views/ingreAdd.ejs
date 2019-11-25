@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/css/manageHeader.css" />
+    <link rel="stylesheet" href="/css/productAdd.css" />
+    <title>상품등록 페이지</title>
+
+</head>
+<body>
+
+ 
+    <%- include template/manageHeader.ejs %>
+
+
+    <div id="contentContainer">
+       <div id="HeadLine">
+           <div id="HeadTitle">성분 종류 등록</div>
+       </div>
+       <div>
+           <form id="paForm" action="/api/add/ingredient" method="POST">
+                <table id="paTable">
+                    <tbody>
+                        <tr>
+                            <tr>
+                                <th colspan="2">
+                                    <div>기본 <span class="paThPointText">성분 정보</span></div>
+                                    
+                                </th>
+                            </tr>
+                            <th>
+                                <label for="nameInput">성분 명칭(한글)</label>
+                            </th>
+                            <td>
+                                <input id="nameInput" class="textInput" type="Text" name="name" autocomplete="off" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <label for="engNameInput">영어 명칭</label>
+                            </th>
+                            <td>
+                                <input id="engNameInput" class="textInput" type="text" name="engName"  autocomplete="off"/>
+                                <div class="inputMsg">성능 타입으로 사용됩니다</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <label for="descInput">기본 성능</label>
+                            </th>
+                            <td>
+                                <textarea id="descInput"  cols="70" rows="6" name="desc" placeholder="150자 이내로 간략하게 적어주세요" maxlength="150"></textarea>
+                                <div class="inputMsg">기능설명에 사용 됩니다.</div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <input id="submitBtn" type="submit" value="등록하기" />
+            </form>
+        </div>
+    </div>
+
+    
+    <script type="text/javascript" src="/js/addForm/addForm.js"></script>
+    <script type="text/javascript" src="/js/addForm/ingreAddForm.js"></script>
+</body>
+</html>
