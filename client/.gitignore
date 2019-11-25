@@ -1,6 +1,6 @@
 
-# 이미지파일
-public/img
+# 업로드파일
+public/img/upload
 
 # 테스트
 test.html
