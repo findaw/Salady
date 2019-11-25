@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/css/manageHeader.css" />
+    <link rel="stylesheet" href="/css/productAdd.css" />
+    <title>상품등록 페이지</title>
+
+</head>
+<body>
+
+    <%- include template/manageHeader.ejs %>
+
+
+    <div id="contentContainer">
+       <div id="HeadLine">
+           <div id="HeadTitle">상품 등록</div>
+       </div>
+       <div>
+           <form id="paForm" action="/api/add/product" method="POST" enctype="multipart/form-data">
+                <table id="paTable">
+                    <tbody>
+                        <tr>
+                            <tr>
+                                <th colspan="2">
+                                    <div>제품 <span class="paThPointText">기본정보</span></div>
+                                    <div class="inputMsg">제품 리스트에 표기될 정보입니다.</div>
+                                </th>
+                            </tr>
+                            <th>
+                                <label for="nameInput">제품명</label>
+                            </th>
+                            <td>
+                                <input id="nameInput" class="textInput" type="Text" name="name" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <label for="priceInput">제품가격</label>
+                            </th>
+                            <td>
+                                <input id="priceInput" class="textInput" type="number" name="price" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <label for="descInput">제품기본설명</label>
+                            </th>
+                            <td>
+                                <input id="descInput" class="textInput" type="Text" name="desc" maxlength="30" placeholder="최대 30자" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <label for="productImg">제품 기본이미지</label>
+                            </th>
+                            <td>
+                                <input id="productImg" type="file" name="productImg"/>
+                                <div class="inputMsg">※제품 리스트에 표시될 기본이미지입니다.</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th colspan="2">
+                                    <div>제품 <span class="paThPointText">상세정보</span></div>
+                                    <div class="inputMsg">제품 상세페이지에 표기될 정보입니다.</div>
+                            </th>
+                        </tr>
+                        <tr>
+                            <th>
+                                <label for="detailImg">제품 이미지</label>
+                            </th>
+                            <td>
+                                <input id="detailImg" type="file" name="detailImg" multiple/>
+                                <div class="inputMsg">※상세화면에 표기될 이미지목록입니다.</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <label for="promoImg">프로모션 이미지</label>
+                            </th>
+                            <td>
+                                <input id="promoImg" type="file" name="promoImg"/>
+                                <div class="inputMsg">※상세화면에 표기될 프로모션이미지 입니다.</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <label for="volumeInput1">용량/분량</label>
+                            </th>
+                            <td>
+                                <input id="volumeInput1" class="volumeInput" type="number" name="volume" placeholder="용량" />
+                                <select id="volumeUnit" name="volumeUnit">
+                                    <option value="g" selected>g</option>
+                                    <option value="mg">mg</option>
+                                </select>
+                                <span>/</span>
+                                <input id="volumeInput2" class="volumeInput" type="number" name="takeDate" placeholder="날짜" />
+                                <select  id="takeDateUnit" name="takeDateUnit">
+                                    <option value="w">주</option>
+                                    <option value="m" selected>개월</option>
+                                    <option value="y">년</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <label for="chkWrap">성분</label>
+                            </th>
+                            <td>
+                                <div id="indgChkWrap">
+                                   
+                                    <% if(data != null){
+                                        for(let i = 0; i < data.length; i++){ %>
+                                            <span>
+                                                <input type="checkbox" name="indg<%- data[i]['id'] %>" id="indg<%- data[i]['id'] %>" value="<%- data[i]['id'] %>"/>
+                                                <label for="indg<%- data[i]['id'] %>"><%- data[i]['name'] %></label>
+                                            </span>
+                                        <% }   
+                                    } %>
+                                
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <label for="takeInput">섭취방법</label>
+                            </th>
+                            <td>
+                                <input id="takeInput" class="textInput" type="Text" name="take" maxlength="60" placeholder="최대 60자" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <label for="allergyInput">알레르기 정보</label>
+                            </th>
+                            <td>
+                                <input id="allergyInput" class="textInput" type="Text" name="allergy" maxlength="60" placeholder="최대 60자" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <label for="guideInput">안내사항</label>
+                            </th>
+                            <td>
+                                <input id="guideInput" class="textInput" type="Text" name="guide" maxlength="60" placeholder="최대 60자" />
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <input id="submitBtn" type="submit" value="저장하기" />
+            </form>
+        </div>
+    </div>
+
+    
+    <script type="text/javascript" src="/js/manageHeader.js"></script>
+    <script type="text/javascript" src="/js/addForm/addForm.js"></script>
+    <script type="text/javascript" src="/js/addForm/productAddForm.js"></script>
+</body>
+</html>

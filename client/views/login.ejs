@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/css/login.css" />
+    <title>로그인</title>
+
+</head>
+<body>
+    <div id="bodyLine">
+
+        <div id="mainWrap">
+            <div id="loginPageWrap">
+                <div id="logoWrap">
+                    <a href="/"><img src="/img/Salady_logo.png" /></a>
+                </div>
+                <div>
+                    <div id="loginForm">
+                        <div>
+                            <!--
+                            <div class="radioWrap">
+                                <span>
+                                    <input type="radio" id="member" name="types" value="member" checked/>
+                                    <label for="member">개인 회원</label>
+                                </span>
+                                <span>
+                                    <input type="radio" id="seller" name="types" values="seller" />
+                                    <label for="seller">판매자 회원</label>
+                                </span>
+                            </div>-->
+                            <div class="inputWrap">
+                                <input type="text" id="idInput" name="id" placeholder="아이디" autocomplete="off" />
+                            </div>
+                            <div class="inputWrap">
+                                <input type="password" id="pwInput" name="pw" placeholder="비밀번호" />
+                            </div>
+                        </div>
+                        <div id="loginServiceLine">
+                            <span>
+                                <input id="prdCheckBox1" class="prdCheckBox" type="checkbox" checked="checked" />
+                                <label  for="prdCheckBox1" ><span title="상품포함여부"></span>자동 로그인</label>
+                            </span>
+                            <a href="#a" id="findAccountText">아이디/비밀번호 찾기</a>
+                        </div>
+                        <div>
+                            <button id="loginBtn">로그인</button>
+                        </div>
+                        
+                    </div>
+
+                </div>
+                <div id="joinLine">
+                    <a href="/view/join"><button id="joinBtn">회원 가입</button></a>
+                </div>
+
+
+            </div>
+
+        </div>  <!-- mainWrap -->
+    </div>     <!-- Body Line -->
+
+    <script type="text/javascript" src="/js/login.js"></script>
+</body>
+</html>

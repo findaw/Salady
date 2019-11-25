@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/css/header.css" />
+    <link rel="stylesheet" href="/css/body.css" />
+    <link rel="stylesheet" href="/css/footer.css" />
+    <link rel="stylesheet"  href="/css/join/joinType.css" />
+    
+    <title>회원가입</title>
+
+</head>
+<body>
+
+   <%- include template/header.ejs %>
+
+
+    <div id="bodyLine">
+
+
+        <div id="mainWrap">
+            <div id="joinContainer">
+                <div id="joinHeadText">회원가입 </div>
+                <div id="joinTypeWrap">
+                    <div class="joinTypeitem">
+                        <div class="joinType"><span class="joinTypeTitle">개인구매</span> 회원</div>
+                        <div class="joinTypeText"></div>
+                        <a href="/view/join/member"><button id="joinMemberBtn" class="joinBtn">가입하기</button></a>
+                    </div>
+                    <div class="joinTypeitem">
+                        <div class="joinType"><span class="joinTypeTitle">사업자 판매</span> 회원</div>
+                        <div class="joinTypeText"></div>
+                        <a href="/view/join/seller"><button id="joinSellerBtn" class="joinBtn">가입하기</button></a>
+                    </div>
+                </div>
+            </div>
+
+        </div>  <!-- mainWrap -->
+
+
+
+    </div>     <!-- Body Line -->
+
+
+    <%- include template/footer.ejs %>
+    
+</body>
+</html>

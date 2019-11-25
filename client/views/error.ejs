@@ -1,0 +1,46 @@
+ 
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8" />
+        
+        <title>Salady</title>
+        <link rel="stylesheet" href="/css/header.css" />
+        <link rel="stylesheet" href="/css/footer.css" />
+        
+        <style>
+            #text{
+                margin : 50px 100px; text-align: center; 
+                border:1px solid #555555; font-size : 30px; padding: 150px 50px;
+            }
+        </style>
+
+    </head>
+    <body>
+        <%- include template/header.ejs %>
+
+        <div id="bodyLine">
+
+            <div id="leftSide">
+                    왼쪽 사이드
+                </div>  <!-- left Side-->
+                
+                
+                <div id="mainWrap">
+                
+                <div id="text">잘못된 접근입니다.</div>
+                
+                </div>  <!-- mainWrap -->
+                
+                
+                <div id="rightSide">
+                    오른쪽사이드
+                </div>  <!-- right Side-->
+                    
+        </div>     <!-- Body Line -->
+
+        <%- include template/footer.ejs %>
+
+        
+    </body>
+</html>

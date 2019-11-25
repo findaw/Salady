@@ -1,0 +1,16 @@
+#welcomeContainer{ 
+    margin : 80px 40px; 
+}
+#welcomeWrap{
+    border:1px solid #cacaca; padding : 70px; text-align: center;
+}
+#welcomeTitle{
+    font-size:35px; margin : 10px; color:#0057a8; font-weight: bold;
+}
+#welcomeText{
+    font-size : 19px; color:#444444;
+}
+#loginBtn{
+    margin-top : 40px; padding : 20px 40px; font-size : 20px; color:white;
+    background-color: #e05a00; border:none;
+}

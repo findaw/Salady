@@ -1,0 +1,46 @@
+ 
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8" />
+        
+        <title>Salady</title>
+        <link rel="stylesheet" href="/css/header.css" />
+        <link rel="stylesheet" href="/css/body.css" />
+        <link rel="stylesheet" href="/css/footer.css" />
+        <link rel="stylesheet" href="/css/home.css" />
+
+    </head>
+    <body>
+        <%- include template/header.ejs %>
+
+        <div id="bodyLine">
+
+            <div id="leftSide">
+                왼쪽 사이드
+            </div>  <!-- left Side-->
+            
+            
+            <div id="mainWrap">
+                <div>
+                    마이페이지 입니다.
+                </div>
+            
+            
+            </div>  <!-- mainWrap -->
+            
+            
+            <div id="rightSide">
+                오른쪽사이드
+            </div>  <!-- right Side-->
+                    
+        </div>     <!-- Body Line -->
+
+
+        <%- include template/footer.ejs %>
+
+        <!-- homeItems를 제일 먼저 호출 -->
+        <script type="text/javascript" src="js/homeItems.js"></script>
+        <script type="text/javascript" src="js/homeSlider.js"></script>
+    </body>
+</html>

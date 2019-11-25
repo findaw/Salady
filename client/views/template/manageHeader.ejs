@@ -1,0 +1,30 @@
+
+<div id="headerLine">
+    <div id="headerWrap">
+        <span id="menuBtn"><img src="/img/menu.png" /></span>
+        <div id="logoImgWrap">
+            <a href="/"><img id="logoImg" src="/img/Salady_logo.png" /></a>
+        </div>
+        <%if(type===2){%>
+            <a href="/view/manage"><div id="headerText">관리페이지(판매자)</div></a>
+        <%}else if(type===1){%>
+                <a href="/admin"><div id="headerText">관리자 페이지</div></a>
+        <%}%>
+        
+    </div>
+    <div id="headerListWrap">
+        <ul id="headerList">
+            <a href="#1"><li>리스트1</li></a>
+            <a href="#2"><li>리스트2</li></a>
+        </ul>
+    </div>      
+</div>      <!-- heade
+    rLine -->
+    <!-- side menu -->
+    <%if(type===2){%>
+        <%- include sellerManageSide.ejs %>
+    <%}else if(type===1){%>
+        <%- include adminManageSide.ejs %>
+    <%}%>
+
+<script type="text/javascript" src="/js/manageHeader.js"></script>

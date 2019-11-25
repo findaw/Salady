@@ -1,0 +1,21 @@
+/*  Body Line   */
+
+#bodyLine{
+    display:flex;
+}
+#mainWrap{
+    display:flex;
+    flex-direction:column;
+    margin : 0 auto;
+    width : 80%;
+}
+@media (min-width:1800px){
+    #mainWrap{width:1350px;}
+}
+
+@media (max-width:1080px){
+    #mainWrap{width:100%;}
+    #leftSide{display:none;}
+    #rightSide{display:none;}
+}
+

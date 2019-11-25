@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/css/header.css" />
+    <link rel="stylesheet" href="/css/body.css" />
+    <link rel="stylesheet" href="/css/footer.css" />
+    <link rel="stylesheet"  href="/css/shoppingCart.css" />
+    
+    <title>장바구니</title>
+
+
+</head>
+<body>
+
+   <%- include template/header.ejs %>
+
+
+    <div id="bodyLine">
+
+
+        <div id="mainWrap">
+
+            
+            <div>
+                <div id="cartTextLine">
+                    <div id="cartTitle">장바구니</div>
+                    <div id="cartText">주문하실 상품과 수량을 확인해주세요.</div>
+                </div>
+                
+
+
+                <div id="cartItemContainer">
+                    <div class="cartItems">
+                        <div class="prdInfoLine">
+                            <div class="prdInfoWrap">
+                                <div class="prdCheckBoxWrap">
+                                    <input id="prdCheckBox1" class="prdCheckBox" type="checkbox" checked="checked" />
+                                    <label  for="prdCheckBox1" ><span title="상품포함여부"></span></label>
+                                </div>
+                                <div class="prdImgWrap">
+                                    <a href="#prdlink"><img src="https://via.placeholder.com/100" /></a>
+                                </div>
+                                <div class="prdTitle">
+                                    <a href="#prdlink">제품이름이 들어가는곳</a>
+                                </div>
+                            </div>
+                            <div class="prdInfoWrap">
+                                <div class="prdAmount">
+                                    <div>
+                                        <button id="prdAmountMinus" class="prdAmountBtn">-</button>
+                                        <input id="prdAmountInput" type="text" value="1" maxlength="4" title="수량"/>
+                                        <button id="prdAmountPlus" class="prdAmountBtn">+</button>
+                                    </div>
+                                </div>
+                                <div class="prdCoupon">
+                                    <div class="prdItemHead">쿠폰사용 여부</div>
+                                    <div>
+                                        <div class="prdItemCoupons couponChecked">
+                                            <input id="prdCoupon1" type="checkbox" checked="checked" />
+                                            <label for="prdCoupon1" class="prdItemCouponsText"><span></span>10% 할인 쿠폰</label>
+                                        </div>
+                                        <div class="prdItemCoupons">
+                                            <input id="prdCoupon2" type="checkbox" />
+                                            <label for="prdCoupon2" class="prdItemCouponsText"><span></span>2000원 할인 쿠폰(20000만원이상 구매시)</label>
+                                        </div>
+                                        <div class="prdItemCoupons couponChecked">
+                                            <input id="prdCoupon3" type="checkbox" checked="checked" />
+                                            <label for="prdCoupon3" class="prdItemCouponsText"><span></span>1000원 할인쿠폰</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="itemDelteBtn"><img src="img/close.png" /></div>
+                                </div>
+                            </div>
+                        </div>  <!-- prdInfoLine -->
+                        <div class="pchInfoLine">
+                            <div  class="pchInfoWrap">
+                                <div class="pchInfoHead">상품금액</div>
+                                <span class="pchInfoPrice">55,600</span>
+                            </div>
+                            <div class="pchPriceCalcImg">
+                                <img src="img/minus.png" />
+                            </div>
+                            <div class="pchInfoWrap">
+                                <div id="itemSalePriceHead" class="pchInfoHead">할인금액</div>
+                                <span id="itemSalePrice" class="pchInfoPrice">12,600</span>
+                            </div>
+                            <div class="pchPriceCalcImg">
+                                <img src="img/plus.png" />
+                            </div>
+                            <div class="pchInfoWrap">
+                                <div class="pchInfoHead">배송료</div>
+                                <span class="pchInfoPrice">2,500</span>
+                            </div>
+                            <div class="pchPriceCalcImg">
+                                <img src="img/equal.png" />
+                            </div>
+                            <div class="pchInfoWrap">
+                                <div id="itemTotalPriceHead" class="pchInfoHead">주문금액</div>
+                                <span id="itemTotalPrice" class="pchInfoPrice">45,500</span>
+                            </div>
+                        </div>  <!-- pchInfoLine -->
+                    </div>  <!-- cartItems -->
+
+
+                    <div class="cartItems">
+                        <div class="prdInfoLine">
+                            <div class="prdInfoWrap">
+                                <div class="prdCheckBoxWrap">
+                                    <input id="prdCheckBox1" class="prdCheckBox" type="checkbox" checked="checked" />
+                                    <label  for="prdCheckBox1" ><span title="상품포함여부"></span></label>
+                                </div>
+                                <div class="prdImgWrap">
+                                    <a href="#prdlink"><img src="https://via.placeholder.com/100" /></a>
+                                </div>
+                                <div class="prdTitle">
+                                    <a href="#prdlink">제품이름이 들어가는곳</a>
+                                </div>
+                            </div>
+                            <div class="prdInfoWrap">
+                                <div class="prdAmount">
+                                    <div>
+                                        <button id="prdAmountMinus" class="prdAmountBtn">-</button>
+                                        <input id="prdAmountInput" type="text" value="1" maxlength="4" title="수량"/>
+                                        <button id="prdAmountPlus" class="prdAmountBtn">+</button>
+                                    </div>
+                                </div>
+                                <div class="prdCoupon">
+                                    <div class="prdItemHead">쿠폰사용 여부</div>
+                                    <div>
+                                        <div class="prdItemCoupons couponChecked">
+                                            <input id="prdCoupon1" type="checkbox" checked="checked" />
+                                            <label for="prdCoupon1" class="prdItemCouponsText"><span></span>10% 할인 쿠폰</label>
+                                        </div>
+                                        <div class="prdItemCoupons">
+                                            <input id="prdCoupon2" type="checkbox" />
+                                            <label for="prdCoupon2" class="prdItemCouponsText"><span></span>2000원 할인 쿠폰(20000만원이상 구매시)</label>
+                                        </div>
+                                        <div class="prdItemCoupons couponChecked">
+                                            <input id="prdCoupon3" type="checkbox" checked="checked" />
+                                            <label for="prdCoupon3" class="prdItemCouponsText"><span></span>1000원 할인쿠폰</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="itemDelteBtn"><img src="img/close.png" /></div>
+                                </div>
+                            </div>
+                        </div>  <!-- prdInfoLine -->
+                        <div class="pchInfoLine">
+                            <div  class="pchInfoWrap">
+                                <div class="pchInfoHead">상품금액</div>
+                                <span class="pchInfoPrice">55,600</span>
+                            </div>
+                            <div class="pchPriceCalcImg">
+                                <img src="img/minus.png" />
+                            </div>
+                            <div class="pchInfoWrap">
+                                <div id="itemSalePriceHead" class="pchInfoHead">할인금액</div>
+                                <span id="itemSalePrice" class="pchInfoPrice">12,600</span>
+                            </div>
+                            <div class="pchPriceCalcImg">
+                                <img src="img/plus.png" />
+                            </div>
+                            <div class="pchInfoWrap">
+                                <div class="pchInfoHead">배송료</div>
+                                <span class="pchInfoPrice">2,500</span>
+                            </div>
+                            <div class="pchPriceCalcImg">
+                                <img src="img/equal.png" />
+                            </div>
+                            <div class="pchInfoWrap">
+                                <div id="itemTotalPriceHead" class="pchInfoHead">주문금액</div>
+                                <span id="itemTotalPrice" class="pchInfoPrice">45,500</span>
+                            </div>
+                        </div>  <!-- pchInfoLine -->
+                    </div>  <!-- cartItems -->
+
+                    <div class="cartItems">
+                        <div class="prdInfoLine">
+                            <div class="prdInfoWrap">
+                                <div class="prdCheckBoxWrap">
+                                    <input id="prdCheckBox1" class="prdCheckBox" type="checkbox" checked="checked" />
+                                    <label  for="prdCheckBox1" ><span title="상품포함여부"></span></label>
+                                </div>
+                                <div class="prdImgWrap">
+                                    <a href="#prdlink"><img src="https://via.placeholder.com/100" /></a>
+                                </div>
+                                <div class="prdTitle">
+                                    <a href="#prdlink">제품이름이 들어가는곳</a>
+                                </div>
+                            </div>
+                            <div class="prdInfoWrap">
+                                <div class="prdAmount">
+                                    <div>
+                                        <button id="prdAmountMinus" class="prdAmountBtn">-</button>
+                                        <input id="prdAmountInput" type="text" value="1" maxlength="4" title="수량"/>
+                                        <button id="prdAmountPlus" class="prdAmountBtn">+</button>
+                                    </div>
+                                </div>
+                                <div class="prdCoupon">
+                                    <div class="prdItemHead">쿠폰사용 여부</div>
+                                    <div>
+                                        <div class="prdItemCoupons couponChecked">
+                                            <input id="prdCoupon1" type="checkbox" checked="checked" />
+                                            <label for="prdCoupon1" class="prdItemCouponsText"><span></span>10% 할인 쿠폰</label>
+                                        </div>
+                                        <div class="prdItemCoupons">
+                                            <input id="prdCoupon2" type="checkbox" />
+                                            <label for="prdCoupon2" class="prdItemCouponsText"><span></span>2000원 할인 쿠폰(20000만원이상 구매시)</label>
+                                        </div>
+                                        <div class="prdItemCoupons couponChecked">
+                                            <input id="prdCoupon3" type="checkbox" checked="checked" />
+                                            <label for="prdCoupon3" class="prdItemCouponsText"><span></span>1000원 할인쿠폰</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="itemDelteBtn"><img src="img/close.png" /></div>
+                                </div>
+                            </div>
+                        </div>  <!-- prdInfoLine -->
+                        <div class="pchInfoLine">
+                            <div  class="pchInfoWrap">
+                                <div class="pchInfoHead">상품금액</div>
+                                <span class="pchInfoPrice">55,600</span>
+                            </div>
+                            <div class="pchPriceCalcImg">
+                                <img src="img/minus.png" />
+                            </div>
+                            <div class="pchInfoWrap">
+                                <div id="itemSalePriceHead" class="pchInfoHead">할인금액</div>
+                                <span id="itemSalePrice" class="pchInfoPrice">12,600</span>
+                            </div>
+                            <div class="pchPriceCalcImg">
+                                <img src="img/plus.png" />
+                            </div>
+                            <div class="pchInfoWrap">
+                                <div class="pchInfoHead">배송료</div>
+                                <span class="pchInfoPrice">2,500</span>
+                            </div>
+                            <div class="pchPriceCalcImg">
+                                <img src="img/equal.png" />
+                            </div>
+                            <div class="pchInfoWrap">
+                                <div id="itemTotalPriceHead" class="pchInfoHead">주문금액</div>
+                                <span id="itemTotalPrice" class="pchInfoPrice">45,500</span>
+                            </div>
+                        </div>  <!-- pchInfoLine -->
+                    </div>  <!-- cartItems -->
+                </div>
+
+
+                <div id="orderTotalPriceLine" >
+                    <div id="orderTotalPriceWrap">
+                        <div  class="totalInfoWrap">
+                            <div class="pchInfoHead">총 상품금액</div>
+                            <span class="pchInfoPrice">135,800</span>
+                        </div>
+                        <div class="pchPriceCalcImg">
+                            <img src="img/minus.png" />
+                        </div>
+                        <div class="totalInfoWrap">
+                            <div id="totalSalePriceHead" class="pchInfoHead">총 상품할인금액</div>
+                            <span id="totalSalePrice" class="pchInfoPrice">35,800</span>
+                        </div>
+                        <div class="pchPriceCalcImg">
+                            <img src="img/plus.png" />
+                        </div>
+                        <div class="totalInfoWrap">
+                            <div class="pchInfoHead">총 배송비</div>
+                            <span class="pchInfoPrice">2,500</span>
+                        </div>
+                        <div class="pchPriceCalcImg">
+                            <img src="img/equal.png" />
+                        </div>
+                        <div class="totalInfoWrap">
+                            <div id="totalPriceHead" class="pchInfoHead">결제 예정금액</div>
+                            <span id="totalPrice" class="pchInfoPrice">102,500</span>
+                        </div>
+                    </div>  <!-- orderToTalPriceWrap -->
+                    <div id="orderBtnLine">
+                        <span id="orderBtn">주문하기</span>
+                    </div>
+                </div>  <!-- orderToTalPriceLine -->
+    
+
+            </div>
+
+        </div>  <!-- mainWrap -->
+
+
+
+    </div>     <!-- Body Line -->
+
+
+    <%- include template/footer.ejs %>
+        
+    <script type="text/javascript"></script>
+    
+</body>
+</html>

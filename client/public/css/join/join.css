@@ -1,0 +1,61 @@
+/* 회원가입 페이지 UI 중복 코드 분리한것*/
+
+#joinHeadText{
+    font-size : 30px; font-weight: bold;
+}
+#joinContainer{
+    margin : 80px 40px;
+}
+#joinForm{
+    display:flex; flex-direction: column; align-items: center;
+}
+#joinTable {
+    width:100%; border-collapse:collapse;
+}
+#joinTable th, #joinTable td{
+    padding : 40px; border-bottom : 2px solid #d2c6ff;
+    
+}
+#joinTable th{
+
+}
+#joinTable td{
+    width : 80%;
+}
+.textInput{
+    width : 80%; max-width:300px; height : 20px;  border:none; padding : 10px;background-color:#e3dcfa;
+}
+
+#joinBtn{
+    background-color:#54346e; padding : 20px; margin: 50px 0 10px 0; border:none; 
+    font-size:17px; font-weight: bold; width : 300px; color:white; cursor: pointer;
+}
+#idCheckBtn{
+    padding : 8px; margin:10px; display:inline; border-radius:5px; font-weight: bold;
+    color:#54346e; border:2px solid #54346e; background-color:white; cursor:pointer;
+
+}
+
+/* message */
+
+.inputMsg{
+    margin-top : 10px;
+}
+#idInputMsg{
+    color:#f0241d;
+}
+#pwInputMsg{
+    color:#7e7e7e;
+}
+#pwChkInputMsg{
+    color:#f0241d;
+}
+#nameInputMsg{
+
+}
+#idInputMsg{
+
+}
+#submitBtnMsg{
+    text-align:center; color:#f0241d;
+}

@@ -1,0 +1,108 @@
+ 
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8" />
+        
+        <title>Salady</title>
+        <link rel="stylesheet" href="/css/header.css" />
+        <link rel="stylesheet" href="/css/body.css" />
+        <link rel="stylesheet" href="/css/footer.css" />
+        <link rel="stylesheet" href="/css/home.css" />
+
+    </head>
+    <body>
+        <%- include template/header.ejs %>
+
+        <div id="bodyLine">
+
+            <div id="leftSide">
+                왼쪽 사이드
+            </div>  <!-- left Side-->
+            
+            
+            <div id="mainWrap">
+      
+                <div id="evtLine" class="line">
+                    <div id="evtWrap" class="wrap">
+                        <div id="evtBanner">
+                            <a href="#testBanner">        
+                                <div id="evtBannerText">click!<br/>무료 검진 후 나만의 추천제품을 확인하세요!</div>
+                                <img src="img/stethoscope.png" />
+                            </a>
+                        </div>
+                        <div id="evtSlide">
+                            <span>
+                                <a href="#1">
+                                    <img class="slideItem" src="https://picsum.photos/285" />
+                                </a>
+                            </span>
+                            <span>
+                                <a href="#2">
+                                    <img class="slideItem" src="https://picsum.photos/205" />
+                                </a>
+                            </span>
+                            <span>
+                                <a href="#3">
+                                    <img class="slideItem" src="https://picsum.photos/361" />
+                                </a>
+                            </span>
+                            <a class="slideBtn" id="slideBtnPrev" ><img src="img/left_arrow.png" /></a>
+                            <a class="slideBtn" id="slideBtnNext" ><img src="img/right_arrow.png" /></a>
+                            <div id="evtSlideNavs">
+                                <span class="evtSlideNav"></span>
+                                <span class="evtSlideNav"></span>
+                                <span class="evtSlideNav"></span>
+                            </div>
+                        </div>
+                    
+                    </div>
+                </div>  <!-- eventLine -->
+            
+            
+                <div id="productLine" class="line">
+                    <div id="productWrap" class="wrap">
+                        <div id="productLineText">BEST 추천 제품</div>
+                        <div id="productTypeList">
+                            <div id="typeItemWrap">
+                                <!-- items -->
+                            </div>
+                        </div>
+                        <div id="productListWrap"> 
+                            <div id="productList">
+                                <ul id="bestItemWrap">
+                                    <!-- items -->
+                                </ul>
+                            </div>  <!-- productList -->
+                            <a id="plPrevBtn" class="productBtn" ><img src="img/left_arrow.png" /></a>
+                            <a id="plNextBtn" class="productBtn" ><img src="img/right_arrow.png" /></a>
+                        </div>      <!-- productListWrap -->
+                    </div>  <!-- productWrap -->
+                </div>  <!-- productLine -->
+            
+            
+                <div id="brandLine" class="line">
+                    <div id="brandLineText">브랜드</div>
+                    <div id="brandWrap" class="wrap">
+                       <!-- items -->
+                    </div>
+                </div>  <!-- brandLine -->
+            
+            
+            </div>  <!-- mainWrap -->
+            
+            
+            <div id="rightSide">
+                오른쪽사이드
+            </div>  <!-- right Side-->
+                    
+        </div>     <!-- Body Line -->
+
+
+        <%- include template/footer.ejs %>
+
+        <!-- homeItems를 제일 먼저 호출 -->
+        <script type="text/javascript" src="js/homeItems.js"></script>
+        <script type="text/javascript" src="js/homeSlider.js"></script>
+    </body>
+</html>
