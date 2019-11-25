@@ -1,7 +1,7 @@
 const mysql = require("mysql2/promise");
 const fs = require("fs");
-const dbConfStr = fs.readFileSync("./database.json");
-const dbConf = JSON.parse(dbConfStr);
+//const dbConfStr = fs.readFileSync("./database.json");
+//const dbConf = JSON.parse(dbConfStr);
 const pool = mysql.createPool({
     host : process.env.dbHost,
     user : process.env.dbUser,
