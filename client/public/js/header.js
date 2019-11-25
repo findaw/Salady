@@ -16,9 +16,9 @@ if(logoutBtn){
             }
     
         }).catch(err=>{
+            console.err(err);
             alert("오류발생. 다시 시도해주세요.");
             location.reload();
-            console.error(err);
         });
     });
 }
