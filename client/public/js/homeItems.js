@@ -10,7 +10,7 @@ class BestItem{
     getBestItems(){
         this.bestItems = [
             {img : "https://picsum.photos/527",  name : "제품이름1", text : "제품설명제품설명제품설명제품설명제품설명제품",  price : "58,000", type : ""},
-            {img : "https://picsum.photos/125",  name : "제품이름1", text : "제품설명제품설명제품설명제품설명제품설명제품",  price : "58,000", type : ""},
+            {img : "https://picsum.photos/125",  name : "제품이름3331", text : "제품설명제품설명제품설명제품설명제품설명제품",  price : "58,000", type : ""},
             {img : "https://picsum.photos/622",  name : "제품이름1", text : "제품설명제품설명제품설명제품설명제품설명제품",  price : "58,000", type : ""},
             {img : "https://picsum.photos/111",  name : "제품이름1", text : "제품설명제품설명제품설명제품설명제품설명제품",  price : "58,000", type : ""},
             {img : "https://picsum.photos/755",  name : "제품이름1", text : "제품설명제품설명제품설명제품설명제품설명제품",  price : "58,000", type : ""},
@@ -23,11 +23,13 @@ class BestItem{
 
         this.bestItems.forEach(item=>{
             let li = document.createElement("li");
+            let a = document.createElement("a");
             let img = document.createElement("img");
             let nameDiv = document.createElement("div");
             let textDiv = document.createElement("div");
             let priceDiv = document.createElement("div");
             
+
             li.classList.add(this.listClassName);
             nameDiv.classList.add(this.nameClassName);
             textDiv.classList.add(this.textClassName);
@@ -42,8 +44,9 @@ class BestItem{
             li.appendChild(nameDiv);
             li.appendChild(textDiv);
             li.appendChild(priceDiv);
-
-            this.bestItemWrap.appendChild(li);
+            a.appendChild(li);
+            a.href="/view/productDetail";
+            this.bestItemWrap.appendChild(a);
         });
     }
 
