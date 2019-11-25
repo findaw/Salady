@@ -1,7 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const path = require("path");
-const jwt = require("jsonwebtoken");
+
 
 //토큰 검증
 router.use(require("./controller/checkToken.js"));
