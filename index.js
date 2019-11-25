@@ -5,15 +5,15 @@ const router = require("./router/router.js");
 const cookieParser = require("cookie-parser");
 const path = require("path");
 const fs = require("fs");
-const confStr = fs.readFileSync("./config.json");
-const conf = JSON.parse(confStr);
+//const confStr = fs.readFileSync("./config.json");
+//const conf = JSON.parse(confStr);
 
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "client/views"));
 
 app.set("projectDir", "D:/ll/project/Salady/");
 app.set("jwtSecret", process.env.jwtSecret);
-app.set("cookieSecret", conf.process.env.cookieSecret);
+app.set("cookieSecret", process.env.cookieSecret);
 app.set("imgNameLength", 60);
 
 app.use(cookieParser(app.get("cookieSecret")));
