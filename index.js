@@ -5,8 +5,8 @@ const router = require("./router/router.js");
 const cookieParser = require("cookie-parser");
 const path = require("path");
 const fs = require("fs");
-const confStr = fs.readFileSync("./config.json");
-const conf = JSON.parse(confStr);
+//const confStr = fs.readFileSync("./config.json");
+//const conf = JSON.parse(confStr);
 
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "client/views"));
