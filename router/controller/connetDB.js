@@ -3,10 +3,10 @@ const fs = require("fs");
 const dbConfStr = fs.readFileSync("./database.json");
 const dbConf = JSON.parse(dbConfStr);
 const pool = mysql.createPool({
-    host : process.db.dbHost,
-    user : process.db.dbuser,
-    password : process.dbPW,
-    database : process.db.dbName,
+    host : process.env.dbHost,
+    user : process.env.dbUser,
+    password : process.env.dbPW,
+    database : process.env.dbName,
     connectionLimit:20,
     waitForConnections:false,
 });
