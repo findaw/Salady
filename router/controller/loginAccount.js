@@ -3,16 +3,7 @@ const formidable  = require("formidable");
 const mysql = require("mysql2/promise");
 const jwt = require("jsonwebtoken");
 const fs = require("fs");
-const dbConfStr = fs.readFileSync("./database.json");
-const dbConf = JSON.parse(dbConfStr);
-const pool = mysql.createPool({
-    host : dbConf.host,
-    user : dbConf.user,
-    password : dbConf.password,
-    database : dbConf.database,
-    connectionLimit:20,
-    waitForConnections:false,
-});
+
 
 module.exports  =  (req ,res)=>{
     
@@ -22,7 +13,7 @@ module.exports  =  (req ,res)=>{
 
         let conn = null;
         try{
-            conn = await pool.getConnection();
+            conn = await require("./connetDB.js")();
             
 
             //첫번째인자에 결과값이 있음
